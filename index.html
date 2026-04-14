@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Metadonnées -->
+    <title>Aaronn AVRILLEAU - Avocat en Droit Fiscal | Montpellier & Perpignan</title>
+    <meta name="description" content="Avocat fiscaliste à Montpellier et Perpignan. Expert en contrôle fiscal, contentieux, structuration de sociétés et ingénierie patrimoniale pour dirigeants.">
+    <meta name="author" content="Maître Aaronn AVRILLEAU">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/HDtb468b/jpeg-2-Copie.png">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/HDtb468b/jpeg-2-Copie.png">
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:url" content="https://avrilleau-avocat.fr/">
+    <meta property="og:title" content="Maître Aaronn AVRILLEAU - Avocat en Droit Fiscal">
+    <meta property="og:description" content="Cabinet d'avocat dédié à la stratégie fiscale, au contrôle et au contentieux. Accompagnement des dirigeants à Montpellier et Perpignan.">
+    <meta property="og:image" content="https://i.ibb.co/HDtb468b/jpeg-2-Copie.png">
+    <meta property="og:image:alt" content="Logo Cabinet Aaronn AVRILLEAU">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Maître Aaronn AVRILLEAU - Avocat Fiscaliste">
+    <meta name="twitter:description" content="Stratégie fiscale et défense des dirigeants. Cabinet Montpellier & Perpignan.">
+    <meta name="twitter:image" content="https://i.ibb.co/HDtb468b/jpeg-2-Copie.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-primary: #3d729a;
+            --brand-dark: #0a2342;
+            --brand-beige: #fdfaf6; 
+            --brand-light-blue: #f4f8fb;
+        }
+
+        /* Normalisation typographique stricte */
+        body {
+            font-family: 'Montserrat', sans-serif !important;
+            background-color: var(--brand-beige); 
+            color: #1e293b;
+            font-size: 20px; /* Taille corps de texte desktop */
+            line-height: 1.8;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden; /* Empêche le scroll horizontal indésirable */
+        }
+
+        p {
+            text-align: justify !important;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+        }
+
+        /* Ajustement Mobile */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* Taille plus adaptée au mobile */
+            }
+        }
+        
+        /* Force la police Serif sur les titres et classes spécifiques */
+        h1, h2, h3, h4, h5, .serif, .font-serif {
+            font-family: Cambria, Georgia, 'Times New Roman', serif !important;
+            font-weight: 700;
+            line-height: 1.2;
+            font-style: normal !important;
+        }
+
+        /* Utilitaires de design Award */
+        .glass-morphism {
+            background: rgba(253, 250, 246, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.03);
+        }
+        
+        .brand-gradient {
+            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-underline {
+            position: relative;
+        }
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            display: flex;
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--brand-beige);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brand-primary);
+        }
+
+        .img-premium-hover {
+            filter: grayscale(100%);
+            transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .img-premium-hover:hover {
+            filter: grayscale(0%);
+            transform: scale(1.03);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
