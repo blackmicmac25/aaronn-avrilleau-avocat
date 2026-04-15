@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
             
             {/* Photo above form */}
             <div className="w-full h-48 md:h-64 mb-8 overflow-hidden rounded-sm relative z-10 shadow-sm border border-slate-100 bg-[#F2E8D8] flex items-center justify-center">
-               <img src="https://i.ibb.co/rfRqYM6j/211c4b96-7f3a-4c02-9abb-470e2859fced.png" alt="Avocat" className="w-full h-auto object-cover" />
+               <img src="https://i.ibb.co/LX11QdrN/3.jpg" alt="Avocat" className="w-full h-auto object-cover" />
             </div>
             <form className="space-y-6 md:space-y-8 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
