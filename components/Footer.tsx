@@ -46,7 +46,6 @@ const Footer: React.FC = () => {
                 <div className="text-slate-600 text-xs text-justify">
                   <span className="block font-bold text-slate-900">Cabinet domicilié à Montpellier</span>
                   <p>Déplacements à Perpignan et Montpellier</p>
-                  <p className="mt-1">Rendez-vous au cabinet ou par visioconférence</p>
                 </div>
               </li>
               <li className="flex items-start space-x-4">
