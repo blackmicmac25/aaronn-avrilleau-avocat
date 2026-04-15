@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
                   <Icons.Mail />
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Email direct <span className="text-red-500 normal-case tracking-normal">(En priorité)</span></p>
+                  <p className="text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Email direct <span className="text-[#112056] normal-case tracking-normal">(En priorité)</span></p>
                   <a href="mailto:cabinet@avrilleau-avocat.fr" className="text-lg md:text-2xl font-bold text-slate-900 hover:text-[#598BB3] transition-colors serif border-b border-transparent hover:border-[#598BB3] break-all md:break-normal">cabinet@avrilleau-avocat.fr</a>
                 </div>
               </div>
@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
                   <Icons.Phone />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Portable <span className="text-[#B6834A] normal-case tracking-normal">(En cas d'urgence)</span></p>
+                  <p className="text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Portable <span className="text-[#112056] normal-case tracking-normal">(En cas d'urgence)</span></p>
                   <a href="tel:+33750830928" className="text-lg md:text-2xl font-bold text-slate-900 hover:text-[#598BB3] transition-colors serif">+33 (0)7 50 83 09 28</a>
                 </div>
               </div>
@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
             
             {/* Photo above form */}
             <div className="w-full h-48 md:h-64 mb-8 overflow-hidden rounded-sm relative z-10 shadow-sm border border-slate-100 bg-[#F2E8D8] flex items-center justify-center">
-               <img src="/images/image1-31.png" alt="Avocat" className="w-full h-auto object-cover" />
+               <img src="https://i.ibb.co/rfRqYM6j/211c4b96-7f3a-4c02-9abb-470e2859fced.png" alt="Avocat" className="w-full h-auto object-cover" />
             </div>
             <form className="space-y-6 md:space-y-8 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
