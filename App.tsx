@@ -11,6 +11,8 @@ import Contact from './components/Contact';
 import Fees from './components/Fees';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import LegalNotice from './components/LegalNotice';
+import CookiePolicy from './components/CookiePolicy';
 
 const AppContent: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -70,6 +72,8 @@ const AppContent: React.FC = () => {
             <Route path="/articles-permanents" element={<Articles />} />
             <Route path="/article/:slug" element={<ArticlePage />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/mentions-legales" element={<LegalNotice />} />
+            <Route path="/cookies" element={<CookiePolicy />} />
           </Routes>
         </main>
 
