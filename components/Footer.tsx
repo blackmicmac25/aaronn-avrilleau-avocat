@@ -22,11 +22,11 @@ const Footer: React.FC = () => {
                 href="https://www.linkedin.com/in/aaronn-avrilleau" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center hover:scale-110 transition-all active:scale-95"
+                className="w-8 h-8 flex items-center justify-center hover:scale-110 transition-all active:scale-95"
                 title="LinkedIn"
               >
                 <img 
-                  src="/images/linkedin-logo.png" 
+                  src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" 
                   alt="LinkedIn" 
                   className="w-full h-full object-contain"
                 />
