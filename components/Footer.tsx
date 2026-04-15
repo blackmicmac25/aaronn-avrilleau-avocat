@@ -22,10 +22,14 @@ const Footer: React.FC = () => {
                 href="https://www.linkedin.com/in/aaronn-avrilleau" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white text-[#0077B5] border border-slate-200 rounded-full flex items-center justify-center hover:bg-[#0077B5] hover:text-white transition-all shadow-sm active:scale-95"
+                className="w-10 h-10 flex items-center justify-center hover:scale-110 transition-all active:scale-95"
                 title="LinkedIn"
               >
-                <Linkedin className="w-5 h-5" fill="currentColor" />
+                <img 
+                  src="/images/linkedin-logo.png" 
+                  alt="LinkedIn" 
+                  className="w-full h-full object-contain"
+                />
               </a>
             </div>
           </div>
