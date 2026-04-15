@@ -43,10 +43,11 @@ const Footer: React.FC = () => {
             <ul className="space-y-6">
               <li className="flex items-start space-x-4">
                 <MapPin className="w-5 h-5 text-[#598BB3] mt-1 shrink-0" />
-                <p className="text-slate-600 text-xs text-justify">
+                <div className="text-slate-600 text-xs text-justify">
                   <span className="block font-bold text-slate-900">Cabinet domicilié à Montpellier</span>
-                  Rendez-vous au cabinet ou par visioconférence
-                </p>
+                  <p>Déplacements à Perpignan et Montpellier</p>
+                  <p className="mt-1">Rendez-vous au cabinet ou par visioconférence</p>
+                </div>
               </li>
               <li className="flex items-start space-x-4">
                 <Video className="w-5 h-5 text-[#598BB3] mt-1 shrink-0" />
