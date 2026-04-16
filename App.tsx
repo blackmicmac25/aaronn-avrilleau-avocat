@@ -13,6 +13,10 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import LegalNotice from './components/LegalNotice';
 import CookiePolicy from './components/CookiePolicy';
+import Role from './components/WhyCall/Role';
+import Expertise from './components/WhyCall/Expertise';
+import Methodology from './components/WhyCall/Methodology';
+import FollowUp from './components/WhyCall/FollowUp';
 
 const AppContent: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -67,6 +71,10 @@ const AppContent: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/votre-avocat-privilegie" element={<PrivilegedLawyer />} />
             <Route path="/quand-solliciter" element={<WhyCall />} />
+            <Route path="/quand-solliciter/role-avocat" element={<Role />} />
+            <Route path="/quand-solliciter/domaine-intervention" element={<Expertise />} />
+            <Route path="/quand-solliciter/approche-pluridisciplinaire" element={<Methodology />} />
+            <Route path="/quand-solliciter/suivi-regularite" element={<FollowUp />} />
             <Route path="/honoraires" element={<Fees />} />
             <Route path="/actualites" element={<News />} />
             <Route path="/articles-permanents" element={<Articles />} />

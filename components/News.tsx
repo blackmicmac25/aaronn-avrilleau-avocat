@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 
 
@@ -39,9 +39,15 @@ const News: React.FC = () => {
               Actualités <span className="text-slate-400 font-light">& Veille.</span>
             </h2>
           </div>
-          <a href="https://www.linkedin.com/in/aaronn-avrilleau" target="_blank" className="flex items-center gap-3 px-6 py-3 bg-[#0077b5] text-white hover:bg-[#112056] hover:text-white transition-all rounded-sm group shadow-md hover:-translate-y-1">
-            <Linkedin className="w-5 h-5" fill="currentColor" />
-            <span className="font-bold uppercase tracking-widest text-[10px]">Suivez-moi sur LinkedIn</span>
+          <a href="https://www.linkedin.com/in/aaronn-avrilleau" target="_blank" className="flex items-center gap-3 px-6 py-3 bg-[#0A66C2] text-white hover:bg-[#112056] hover:text-white transition-all rounded-sm group shadow-md hover:-translate-y-1">
+            <div className="bg-white p-[1px] rounded-sm flex items-center justify-center shrink-0">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" 
+                alt="LinkedIn" 
+                className="w-4 h-4 object-contain"
+              />
+            </div>
+            <span className="font-bold uppercase tracking-widest text-[10px]">Retrouvez-moi sur LinkedIn</span>
           </a>
         </div>
 
@@ -64,8 +70,12 @@ const News: React.FC = () => {
                         rel="noopener noreferrer" 
                         className="bg-white p-8 border border-slate-200 hover:border-[#0077b5] hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full"
                     >
-                        <div className="absolute top-0 right-0 p-4 text-[#0077b5] group-hover:text-slate-200 transition-colors">
-                            <Linkedin className="w-6 h-6" fill="currentColor" />
+                        <div className="absolute top-0 right-0 p-4 transition-colors">
+                            <img 
+                              src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" 
+                              alt="LinkedIn" 
+                              className="w-6 h-6 object-contain"
+                            />
                         </div>
                         <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3 block">{news.date}</span>
                         <h4 className="font-bold text-slate-900 serif text-xl mb-3 group-hover:text-[#0077b5] transition-colors leading-tight">{news.title}</h4>

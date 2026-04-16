@@ -19,6 +19,26 @@ const Home: React.FC = () => {
     <>
       <Hero />
 
+      {/* --- BOUTON LINKEDIN FLOTTANT SUR LE CÔTÉ - Visibilité améliorée --- */}
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-[100] hidden md:flex flex-col animate-in slide-in-from-right-10 duration-1000">
+        <a 
+          href="https://www.linkedin.com/in/aaronn-avrilleau" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group flex items-center bg-[#0077b5] text-white p-4 rounded-l-xl shadow-2xl hover:bg-[#112056] transition-all duration-500 hover:pr-8"
+          title="Consulter mon profil LinkedIn"
+        >
+          <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" 
+            alt="LinkedIn" 
+            className="w-6 h-6 object-contain"
+          />
+          <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 whitespace-nowrap text-[10px] font-bold uppercase tracking-widest text-white">
+            LinkedIn
+          </span>
+        </a>
+      </div>
+
       {/* --- SECTION PRÉSENTATION COMPLÈTE --- */}
       <section className="py-12 md:py-20 lg:py-32 bg-[#F2E8D8] border-t border-slate-200/40 relative overflow-hidden">
         {/* Decorative Background Elements */}
@@ -32,22 +52,23 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
             
             <div className="lg:col-span-5 reveal order-2 lg:order-1">
-              <div className="relative group cursor-crosshair max-w-md mx-auto lg:max-w-none">
+              <div className="relative group max-w-md mx-auto lg:max-w-none">
+                {/* Image Container - Vertical format, full color, no effects */}
                 <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-2xl border border-slate-200/50 bg-white relative">
                   <img 
                     src="https://i.ibb.co/rfRqYM6j/211c4b96-7f3a-4c02-9abb-470e2859fced.png" 
                     alt="Maître Aaronn AVRILLEAU" 
-                    className="w-full h-full object-cover img-premium-hover"
+                    className="w-full h-full object-cover object-[80%_center] transition-none"
                   />
                 </div>
-                <div className="absolute -bottom-6 -right-4 lg:-bottom-10 lg:-right-6 bg-[#112056] p-6 lg:p-10 text-white shadow-2xl max-w-[280px] lg:max-w-[340px] transition-transform duration-700 group-hover:translate-y-2">
-                  <p className="text-[8px] lg:text-[10px] uppercase tracking-normal font-bold text-[#598BB3] mb-2 lg:mb-4">Inscrit à la Cour d’appel</p>
-                  <p className="serif text-xl lg:text-2xl font-bold leading-tight text-white mb-2 tracking-tight">Montpellier</p>
-                  <p className="text-[7px] lg:text-[9px] opacity-60 uppercase tracking-wider font-bold">Cabinet principal (Hérault)</p>
+                {/* Location Info Box - Perfectly Centered for balance */}
+                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-[#112056] p-6 lg:p-10 text-white shadow-2xl w-[90%] md:w-auto md:min-w-[280px] lg:min-w-[340px] text-center transition-transform duration-700 group-hover:-translate-y-2">
+                  <p className="serif text-xl lg:text-3xl font-bold leading-tight text-white mb-2 tracking-tight">AVOCAT EN <br/> DROIT FISCAL</p>
+                  <p className="text-[10px] lg:text-[12px] uppercase tracking-[0.2em] font-bold text-[#598BB3]">Conseil et Contentieux</p>
                 </div>
               </div>
 
-              <div className="mt-12 lg:mt-16 p-8 lg:p-12 bg-white border border-slate-200/50 reveal shadow-sm hover:shadow-xl transition-all duration-700 group">
+              <div className="mt-16 lg:mt-24 p-8 lg:p-12 bg-white border border-slate-200/50 reveal shadow-sm hover:shadow-xl transition-all duration-700 group">
                 <h4 className="text-[10px] lg:text-xs uppercase tracking-[0.3em] font-bold text-[#598BB3] mb-8 border-b border-[#598BB3]/20 pb-6 group-hover:border-[#598BB3] transition-colors">Diplômes & Certifications</h4>
                 <ul className="space-y-6 lg:space-y-8">
                   {diplomas.map((dip, i) => (
@@ -61,11 +82,16 @@ const Home: React.FC = () => {
             </div>
 
             <div className="lg:col-span-7 space-y-8 lg:space-y-12 reveal order-1 lg:order-2">
-              <span className="text-[#598BB3] uppercase tracking-[0.3em] text-xs font-bold block">PRÉSENTATION</span>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight tracking-tighter serif">
-                Maître Aaronn <br />
-                <span className="serif font-light text-slate-400">AVRILLEAU.</span>
-              </h2>
+              <div className="space-y-6">
+                <span className="text-[#598BB3] uppercase tracking-[0.3em] text-xs font-bold block">PRÉSENTATION</span>
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight tracking-tighter serif">
+                  Maître Aaronn <br />
+                  <span className="serif font-light text-slate-400">AVRILLEAU.</span>
+                </h2>
+                <p className="text-[#598BB3] uppercase tracking-[0.2em] text-[10px] md:text-xs font-bold mt-4 border-l-2 border-[#598BB3] pl-4">
+                  Avocat en droit fiscal inscrit à la Cour d’appel de Montpellier
+                </p>
+              </div>
               
               <div className="space-y-6 lg:space-y-8 text-slate-700 leading-relaxed font-normal text-sm md:text-base lg:text-lg text-justify">
                 <p>
@@ -86,10 +112,55 @@ const Home: React.FC = () => {
                       <p className="text-[10px] uppercase tracking-[0.3em] text-[#598BB3] font-bold mt-2">Avocat au Barreau</p>
                     </div>
                   </div>
+
+                  {/* Nouveau bloc CTA harmonieux */}
+                  <div className="mt-12 lg:mt-20 pt-12 border-t border-slate-200/50 reveal">
+                    <div className="bg-white/80 backdrop-blur-sm p-8 lg:p-12 border border-slate-200/50 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all duration-700">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-[#598BB3]/5 rounded-full -translate-y-16 translate-x-16 blur-2xl group-hover:bg-[#598BB3]/10 transition-colors duration-700"></div>
+                      <div className="relative z-10 space-y-8">
+                        <h3 className="text-2xl md:text-4xl font-bold serif text-[#112056] leading-tight tracking-tight">
+                          Construisons votre stratégie <br/>
+                          <span className="text-[#598BB3]">de demain.</span>
+                        </h3>
+                        <Link to="/contact" className="group/btn inline-flex items-center gap-6 px-10 py-5 bg-[#112056] text-white font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs hover:bg-[#598BB3] transition-all rounded-sm shadow-lg active:scale-95">
+                          Prendre rendez-vous
+                          <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-2 transition-transform duration-500" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+      </section>
+      
+      {/* --- SECTION LOGOS DÉFILANTS --- */}
+      <section className="py-12 bg-white border-y border-slate-200/40 overflow-hidden reveal">
+        <div className="animate-scroll flex items-center gap-24 lg:gap-48 px-12">
+          {[
+            "https://i.ibb.co/BH0QSsH6/barreau-mtp-transparent.png",
+            "https://i.ibb.co/HLTqbb23/djce-poppins.png",
+            "https://i.ibb.co/xS8DwfcK/edacs.png",
+            "https://i.ibb.co/Qvq0vdrv/Logo-Couleur-fac-de-droit-montpellier.png",
+            "https://i.ibb.co/BH0QSsH6/barreau-mtp-transparent.png",
+            "https://i.ibb.co/HLTqbb23/djce-poppins.png",
+            "https://i.ibb.co/xS8DwfcK/edacs.png",
+            "https://i.ibb.co/Qvq0vdrv/Logo-Couleur-fac-de-droit-montpellier.png",
+            "https://i.ibb.co/BH0QSsH6/barreau-mtp-transparent.png",
+            "https://i.ibb.co/HLTqbb23/djce-poppins.png",
+            "https://i.ibb.co/xS8DwfcK/edacs.png",
+            "https://i.ibb.co/Qvq0vdrv/Logo-Couleur-fac-de-droit-montpellier.png"
+          ].map((logo, index) => (
+            <div key={index} className="flex items-center justify-center shrink-0">
+              <img 
+                src={logo} 
+                alt="Partenaire Institutionnel" 
+                className={`${logo.includes('edacs') ? 'h-16 md:h-20 scale-110' : 'h-10 md:h-14'} w-auto transition-all duration-1000 hover:scale-110 object-contain`}
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* --- NOUVEL ENCART : LES MOTS DE VOTRE AVOCAT (STYLE ÉPURÉ AWWWARDS) --- */}

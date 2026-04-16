@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Video, Linkedin } from 'lucide-react';
+import { MapPin, Video } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
