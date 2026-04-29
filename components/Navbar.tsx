@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
             <img 
               src="https://i.ibb.co/HDtb468b/jpeg-2-Copie.png" 
               alt="Logo Aaronn AVRILLEAU" 
-              fetchpriority="high"
+              fetchPriority="high"
               loading="eager"
               decoding="async"
               className={`h-8 md:h-12 w-auto object-contain transition-all duration-700 group-hover:rotate-6 ${isMenuOpen ? 'brightness-0 invert' : ''}`}

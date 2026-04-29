@@ -95,7 +95,7 @@ const Hero: React.FC = () => {
                     <img 
                       src={slide.image} 
                       alt={`Slide ${index + 1}`} 
-                      fetchpriority={index === 0 ? "high" : "auto"}
+                      fetchPriority={index === 0 ? "high" : "auto"}
                       loading={index === 0 ? "eager" : "lazy"}
                       decoding="async"
                       className={`w-full h-full object-cover transition-transform duration-[5s] ease-linear ${index === currentSlide ? 'scale-110' : 'scale-100'}`}
