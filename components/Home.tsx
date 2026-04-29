@@ -63,19 +63,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* --- NOUVEL ENCART : LES MOTS DE VOTRE AVOCAT (STYLE UNIFORMIZÉ) --- */}
-      <section className="py-16 md:py-24 bg-white relative overflow-hidden reveal border-y border-slate-100">
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-            <div className="bg-slate-50 p-10 md:p-16 border-l-[6px] border-[#B6834A] rounded-sm transition-all duration-700">
-                <p className="text-xl md:text-2xl uppercase tracking-[0.3em] font-bold text-[#B6834A] mb-10 text-center md:text-left">Les mots de votre avocat</p>
-                <div className="space-y-6 text-lg md:text-xl font-serif text-[#112056] leading-[1.8] italic opacity-90 text-center md:text-left">
-                    <p>
-                        « Maître AVRILLEAU accompagne ses clients avec une vision transversale du droit des affaires, garantissant une stratégie fiscale cohérente et sécurisée. »
-                    </p>
-                </div>
-            </div>
-        </div>
-      </section>
 
       {/* --- SECTION APPEL À L'ACTION --- */}
       <section className="py-16 lg:py-24 bg-[#112056] reveal relative overflow-hidden text-white group/cta">
