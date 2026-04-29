@@ -28,11 +28,14 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none'; // Prevent touch scroll on some mobile browsers
     } else {
       document.body.style.overflow = 'unset';
+      document.body.style.touchAction = 'auto';
     }
     return () => {
       document.body.style.overflow = 'unset';
+      document.body.style.touchAction = 'auto';
     };
   }, [isMenuOpen]);
 
@@ -159,7 +162,7 @@ const Navbar: React.FC = () => {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-[#112056] z-[105] transition-all duration-700 cubic-bezier(0.7, 0, 0.3, 1) ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} lg:hidden flex flex-col items-center justify-center`}>
+      <div className={`fixed inset-0 bg-[#112056] z-[105] transition-all duration-700 cubic-bezier(0.7, 0, 0.3, 1) ${isMenuOpen ? 'translate-y-0 opacity-100 pointer-events-auto visibility-visible' : '-translate-y-full opacity-0 pointer-events-none visibility-hidden'} lg:hidden flex flex-col items-center justify-center`}>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
              <div className="absolute top-0 right-0 w-[50vh] h-[50vh] bg-[#598BB3] rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-blob"></div>
              <div className="absolute bottom-0 left-0 w-[50vh] h-[50vh] bg-[#598BB3] rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-blob animation-delay-2000"></div>

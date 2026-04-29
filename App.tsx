@@ -33,9 +33,12 @@ const AppContent: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (window.scrollY / totalHeight) * 100;
-      setScrollProgress(progress);
+      // Use requestAnimationFrame for smoother scroll progress updates
+      requestAnimationFrame(() => {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+        setScrollProgress(progress);
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -57,12 +60,9 @@ const AppContent: React.FC = () => {
     };
 
     observeElements();
-    const timer = setTimeout(observeElements, 500); 
+    // Removed the 500ms delay to improve perceived performance
 
-    return () => {
-      observer.disconnect();
-      clearTimeout(timer);
-    };
+    return () => observer.disconnect();
   }, [location.pathname]); 
 
   return (
