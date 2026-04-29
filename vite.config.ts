@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 import { loadEnv } from 'vite';
 
@@ -10,7 +11,10 @@ export default defineConfig(({ mode }) => {
         port: 3000,
         host: '0.0.0.0',
       },
-      plugins: [react()],
+      plugins: [
+        react(),
+        tailwindcss(),
+      ],
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
@@ -21,13 +25,10 @@ export default defineConfig(({ mode }) => {
         }
       },
       build: {
-        // Target modern browsers for smaller bundles
         target: 'es2020',
-        // Increase chunk size warning limit
         chunkSizeWarningLimit: 1000,
         rollupOptions: {
           output: {
-            // Split vendor chunks for better caching
             manualChunks: {
               'react-vendor': ['react', 'react-dom'],
               'router': ['react-router-dom'],
@@ -35,9 +36,7 @@ export default defineConfig(({ mode }) => {
             }
           }
         },
-        // Minify CSS
         cssMinify: true,
-        // Minify JS
         minify: 'esbuild',
       }
     };
