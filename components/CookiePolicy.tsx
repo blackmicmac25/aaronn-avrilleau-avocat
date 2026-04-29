@@ -2,11 +2,16 @@ import React from 'react';
 
 const CookiePolicy: React.FC = () => {
   return (
-    <div className="pt-32 pb-24 bg-[#F2E8D8] min-h-screen">
-      <div className="max-w-4xl mx-auto px-6">
-        <h1 className="text-4xl md:text-5xl font-bold serif text-slate-900 mb-12 reveal visible">Gestion des Cookies</h1>
-        
-        <div className="space-y-12 text-slate-700 reveal visible delay-200">
+    <div className="bg-white min-h-screen">
+      <section className="pt-32 pb-16 bg-[#F2E8D8]">
+        <div className="max-w-4xl mx-auto px-6">
+          <h1 className="text-4xl md:text-5xl font-bold serif text-slate-900 reveal visible">Confidentialité & Cookies</h1>
+        </div>
+      </section>
+      
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="space-y-12 text-slate-700 reveal visible delay-200">
           <section>
             <h2 className="text-xl font-bold text-[#112056] mb-4 uppercase tracking-widest">1. Qu'est-ce qu'un cookie ?</h2>
             <p className="leading-relaxed">
@@ -38,13 +43,32 @@ const CookiePolicy: React.FC = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#112056] mb-4 uppercase tracking-widest">4. Données personnelles</h2>
-            <p className="leading-relaxed">
-              Nous accordons une grande importance à la protection de vos données. En cas d'utilisation du formulaire de contact, les informations recueillies ne sont utilisées qu'à des fins de réponse à votre demande et ne sont jamais cédées à des tiers sans votre accord explicite.
+            <h2 className="text-xl font-bold text-[#112056] mb-4 uppercase tracking-widest">4. Politique de Confidentialité (RGPD)</h2>
+            <p className="leading-relaxed mb-4">
+              Conformément au Règlement Général sur la Protection des Données (RGPD), Maître Aaronn AVRILLEAU s'engage à ce que la collecte et le traitement de vos données soient conformes à la réglementation.
             </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2">Responsable du traitement</h3>
+                <p>Maître Aaronn AVRILLEAU, 27 Rue de l'Aiguillerie, 34000 Montpellier.</p>
+              </div>
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2">Données collectées</h3>
+                <p>Les données collectées via le formulaire de contact (nom, email, objet, message) sont uniquement destinées au traitement de votre demande par le cabinet.</p>
+              </div>
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2">Durée de conservation</h3>
+                <p>Vos données sont conservées pendant la durée nécessaire à l'instruction de votre demande ou pour la durée légale de conservation des dossiers de consultation juridique.</p>
+              </div>
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2">Vos droits</h3>
+                <p>Vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Pour exercer ces droits, vous pouvez nous contacter à l'adresse du cabinet ou via le formulaire de contact.</p>
+              </div>
+            </div>
           </section>
         </div>
-      </div>
+          </div>
+      </section>
     </div>
   );
 };

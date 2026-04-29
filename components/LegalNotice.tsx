@@ -2,11 +2,16 @@ import React from 'react';
 
 const LegalNotice: React.FC = () => {
   return (
-    <div className="pt-32 pb-24 bg-[#F2E8D8] min-h-screen">
-      <div className="max-w-4xl mx-auto px-6">
-        <h1 className="text-4xl md:text-5xl font-bold serif text-slate-900 mb-12 reveal visible">Mentions Légales</h1>
-        
-        <div className="space-y-12 text-slate-700 reveal visible delay-200">
+    <div className="bg-white min-h-screen">
+      <section className="pt-32 pb-16 bg-[#F2E8D8]">
+        <div className="max-w-4xl mx-auto px-6">
+          <h1 className="text-4xl md:text-5xl font-bold serif text-slate-900 reveal visible">Mentions Légales</h1>
+        </div>
+      </section>
+      
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="space-y-12 text-slate-700 reveal visible delay-200">
           <section>
             <h2 className="text-xl font-bold text-[#112056] mb-4 uppercase tracking-widest">1. Présentation du site</h2>
             <p className="leading-relaxed">
@@ -35,13 +40,32 @@ const LegalNotice: React.FC = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-[#112056] mb-4 uppercase tracking-widest">4. Droit applicable</h2>
+            <h2 className="text-xl font-bold text-[#112056] mb-4 uppercase tracking-widest">4. Médiation de la consommation</h2>
+            <p className="leading-relaxed">
+              Conformément aux dispositions des articles L.612-1 et suivants du Code de la consommation, vous avez la possibilité, en cas de litige avec un avocat, de recourir gratuitement au Médiateur de la consommation de la profession d'avocat : 
+            </p>
+            <ul className="mt-4 space-y-2 list-disc list-inside">
+              <li><strong>Adresse :</strong> 180 boulevard Haussmann, 75008 Paris</li>
+              <li><strong>Site internet :</strong> <a href="https://mediateur-consommation-avocat.fr" target="_blank" rel="noopener noreferrer" className="text-[#598BB3] underline">mediateur-consommation-avocat.fr</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-[#112056] mb-4 uppercase tracking-widest">5. Droit applicable</h2>
             <p className="leading-relaxed">
               Tout litige en relation avec l’utilisation du site est soumis au droit français. Il est fait attribution exclusive de juridiction aux tribunaux compétents de Montpellier.
             </p>
           </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-[#112056] mb-4 uppercase tracking-widest">6. Accessibilité</h2>
+            <p className="leading-relaxed">
+              Le site est conçu pour être accessible au plus grand nombre. Nous nous efforçons d'améliorer continuellement l'expérience utilisateur et d'appliquer les standards d'accessibilité pertinents. Pour plus d'informations, consultez notre <a href="#/accessibilite" className="text-[#598BB3] underline">déclaration d'accessibilité</a>.
+            </p>
+          </section>
         </div>
-      </div>
+          </div>
+      </section>
     </div>
   );
 };

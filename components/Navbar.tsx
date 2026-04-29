@@ -56,7 +56,6 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'ACCUEIL - PRÉSENTATION', href: '/' },
-    { name: 'VOTRE AVOCAT PRIVILÉGIÉ', href: '/votre-avocat-privilegie' },
     { 
       id: 'why-call',
       name: 'QUAND FAIRE APPEL À UN AVOCAT', 
@@ -84,15 +83,19 @@ const Navbar: React.FC = () => {
             <img 
               src="https://i.ibb.co/HDtb468b/jpeg-2-Copie.png" 
               alt="Logo Aaronn AVRILLEAU" 
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
               className={`h-8 md:h-12 w-auto object-contain transition-all duration-700 group-hover:rotate-6 ${isMenuOpen ? 'brightness-0 invert' : ''}`}
             />
-            <div className="flex flex-col">
-              <h1 className={`text-[10px] md:text-sm font-bold tracking-tight leading-none uppercase transition-colors duration-500 ${isMenuOpen ? 'text-white' : 'text-slate-900'}`}>
-                Aaronn <span className="font-light">AVRILLEAU</span>
+            <div className={`h-8 md:h-12 w-[2px] transition-colors duration-500 ${isMenuOpen ? 'bg-white/30' : 'bg-[#112056]'}`}></div>
+            <div className="flex flex-col justify-center">
+              <h1 className={`text-[12px] md:text-base font-bold tracking-wide leading-none uppercase transition-colors duration-500 ${isMenuOpen ? 'text-white' : 'text-[#112056]'}`}>
+                AVRILLEAU
               </h1>
-              <p className={`text-[6px] md:text-[8px] uppercase tracking-[0.2em] font-semibold mt-0.5 md:mt-1 transition-colors duration-500 ${isMenuOpen ? 'text-slate-400' : 'text-[#598BB3]'}`}>
-                Droit Fiscal
-              </p>
+              <h2 className={`text-[12px] md:text-base font-bold tracking-wide leading-none uppercase mt-0.5 md:mt-1 transition-colors duration-500 ${isMenuOpen ? 'text-slate-400' : 'text-[#112056]'}`}>
+                AVOCAT
+              </h2>
             </div>
           </Link>
           

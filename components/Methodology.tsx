@@ -9,7 +9,7 @@ const Methodology: React.FC = () => {
             <div className="relative flex justify-center lg:justify-start">
               <div className="relative group max-w-sm w-full transition-transform duration-700 hover:scale-[1.02]">
                 <div className="flex items-center justify-center p-0 md:p-8">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://i.ibb.co/HDtb468b/jpeg-2-Copie.png" 
                     alt="Identité Aaronn AVRILLEAU" 
                     className="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity" 

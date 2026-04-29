@@ -9,37 +9,41 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#F2E8D8] pt-28 pb-12 md:pt-36 md:pb-16 font-['Montserrat']">
-      <div className="max-w-7xl mx-auto px-6">
-        
-        {/* HEADER HARMONISÉ */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16 gap-8 reveal">
-          <div className="max-w-3xl">
-            <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-4 block underline underline-offset-8">CONTACT</span>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase">
-              Prendre <span className="text-slate-400 font-light">Rendez-vous.</span>
-            </h1>
+    <div className="bg-white font-['Montserrat'] min-h-screen">
+      <section className="bg-[#F2E8D8] pt-28 pb-12 md:pt-36 md:pb-16">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* HEADER HARMONISÉ */}
+          <div className="flex flex-col md:flex-row justify-between items-end mb-0 gap-8 reveal">
+            <div className="max-w-3xl">
+              <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-4 block underline underline-offset-8">CONTACT</span>
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase">
+                Prendre <span className="text-slate-400 font-light">Rendez-vous.</span>
+              </h1>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+      <section className="bg-white py-12 md:py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
           
           <div className="space-y-8 md:space-y-10 reveal">
             <div>
               <h2 className="text-2xl md:text-4xl font-bold text-[#112056] mt-4 serif tracking-tight">Discutons de votre situation.</h2>
             </div>
             
-            <div className="space-y-4 text-slate-600 text-base md:text-lg font-light leading-relaxed serif italic">
+            <div className="space-y-4 text-slate-600 text-base md:text-lg font-light leading-relaxed serif">
                 <p>
-                    Pour toute demande d’assistance juridique ou fiscale, je vous remercie d’utiliser prioritairement le formulaire de contact ci-dessous ou l’adresse électronique du cabinet, en exposant brièvement les motifs de votre sollicitation.
+                    Pour toute demande d’assistance juridique ou fiscale, je vous remercie d’utiliser prioritairement le formulaire de contact ci‑dessous, l’adresse électronique du cabinet ou un message texte en exposant brièvement les motifs de votre sollicitation.
                 </p>
                 <p>
-                    Je m’efforce de répondre aux nouvelles demandes dans un délai de deux jours ouvrables, sauf situation d’urgence particulière.
+                    Je m’efforce de répondre aux nouvelles demandes dans un délai de deux jours ouvrables, sauf situation d’urgence particulière afin de convenir un rendez-vous téléphonique ou physique le plus rapidement.
                 </p>
                 <p>
-                    Mon numéro de téléphone est à utiliser uniquement en cas d’urgence, en précisant les motifs de votre appel.
+                    Avant tout rendez-vous, le numéro de téléphone est à utiliser uniquement en cas d’urgence, en précisant les motifs de votre appel.
                 </p>
-                <p className="text-sm opacity-80 pt-2 border-t border-slate-200">
+                <p>
                     Dans un souci d’efficacité et de gestion rigoureuse des dossiers, les appels provenant de numéros non identifiés ne donnent pas lieu à réponse et ne font l’objet d’aucun rappel en l’absence de message laissé.
                 </p>
             </div>
@@ -85,7 +89,7 @@ const Contact: React.FC = () => {
             
             {/* Photo above form */}
             <div className="w-full h-48 md:h-64 mb-8 overflow-hidden rounded-sm relative z-10 shadow-sm border border-slate-100 bg-[#F2E8D8] flex items-center justify-center">
-               <img src="https://i.ibb.co/LX11QdrN/3.jpg" alt="Avocat" className="w-full h-auto object-cover" />
+               <img loading="lazy" decoding="async" src="https://i.ibb.co/LX11QdrN/3.jpg" alt="Avocat" className="w-full h-auto object-cover" />
             </div>
             <form className="space-y-6 md:space-y-8 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -120,8 +124,9 @@ const Contact: React.FC = () => {
             </form>
           </div>
 
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

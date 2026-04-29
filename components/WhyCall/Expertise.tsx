@@ -1,27 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Briefcase, ChevronLeft, Award, MoveRight } from 'lucide-react';
+import { Briefcase, ChevronLeft, Award, MoveRight, ArrowRight } from 'lucide-react';
 
 const Expertise: React.FC = () => {
   return (
-    <div className="bg-[#F2E8D8] font-['Montserrat'] overflow-x-hidden min-h-screen pb-16">
+    <div className="bg-white font-['Montserrat'] overflow-x-hidden min-h-screen">
       
       {/* HEADER SECTION - Aligned with the new section style */}
-      <section className="pt-28 md:pt-40 pb-20 px-6 bg-white border-b border-slate-100 relative overflow-hidden">
+      <section className="pt-28 md:pt-40 pb-20 px-6 bg-[#F2E8D8] border-b border-slate-100 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-4xl reveal">
             <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-6 block underline underline-offset-8">QUAND FAIRE APPEL À UN AVOCAT</span>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase mb-8">
               Domaines <span className="text-slate-400 font-light">d'intervention</span>
             </h1>
-            <p className="text-lg text-slate-500 font-serif italic max-w-2xl border-l-2 border-[#598BB3] pl-6 py-2">
-                Un accompagnement spécialisé en droit fiscal pour Montpellier, Perpignan et au-delà.
-            </p>
+
           </div>
         </div>
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 opacity-[0.03] pointer-events-none">
-          <Briefcase className="w-[500px] h-[500px]" />
-        </div>
+
       </section>
 
       {/* CONTENT FLOW */}
@@ -34,12 +30,12 @@ const Expertise: React.FC = () => {
             {/* New side-by-side intro layout with image */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-center mb-20 md:mb-32">
                 {/* Image Column */}
-                <div className="lg:col-span-5 reveal">
+                <div className="lg:col-span-6 reveal">
                     <div className="relative group">
                         {/* Decorative background element - Now Centered */}
                         <div className="absolute -inset-4 border-2 border-[#B6834A] rounded-sm -z-10 transition-transform group-hover:scale-[1.02] duration-500"></div>
                         <div className="shadow-[0_20px_50px_rgba(0,0,0,0.2)] rounded-sm overflow-hidden">
-                            <img 
+                            <img loading="lazy" decoding="async" 
                                 src="https://i.ibb.co/S2y6Rjh/1-1.jpg" 
                                 alt="Maître AVRILLEAU" 
                                 className="w-full h-auto transition-all duration-700 hover:scale-[1.03]"
@@ -49,8 +45,8 @@ const Expertise: React.FC = () => {
                 </div>
 
                 {/* Text Column */}
-                <div className="lg:col-span-7 reveal">
-                    <span className="text-[#598BB3] uppercase tracking-widest text-sm font-bold mb-6 block">EXPERTISE & PRÉCISION</span>
+                <div className="lg:col-span-6 reveal">
+
                     <h2 className="text-3xl md:text-5xl font-bold serif text-[#112056] mb-10 uppercase leading-tight">
                         Expertise en <span className="text-slate-400">Droit Fiscal</span>
                     </h2>
@@ -58,9 +54,7 @@ const Expertise: React.FC = () => {
                     <p className="text-slate-700 text-lg md:text-2xl leading-relaxed italic font-serif mb-8 text-justify">
                         Maître AVRILLEAU, avocat en droit fiscal, accompagne les dirigeants, entrepreneurs et particuliers principalement à Montpellier et Perpignan, en conseil comme en contentieux fiscal.
                     </p>
-                    <div className="p-8 bg-white/40 border-l-4 border-[#598BB3] shadow-sm italic text-slate-600">
-                        Une approche rigoureuse et personnalisée pour chaque dossier, alliant expertise technique et vision stratégique.
-                    </div>
+
                 </div>
             </div>
 
@@ -122,7 +116,7 @@ const Expertise: React.FC = () => {
                   key={i} 
                   className="group bg-white p-10 md:p-14 border-t-8 border-t-[#112056] shadow-xl hover:shadow-2xl transition-all duration-500 rounded-sm flex flex-col h-full hover:-translate-y-1"
                 >
-                  <span className="text-[#598BB3] font-bold uppercase tracking-widest text-[10px] mb-8 block opacity-60">DOMAINE D'INTERVENTION {i + 1}</span>
+                  <span className="text-[#598BB3] font-bold uppercase tracking-widest text-[10px] mb-8 block opacity-60">DOMAINE D'INTERVENTION</span>
                   <h4 className="text-2xl font-bold serif text-slate-900 mb-8 group-hover:text-[#598BB3] transition-colors leading-tight">{item.t}</h4>
                   {item.q && <p className="text-[#112056] font-serif italic text-base md:text-lg mb-8 bg-[#F2E8D8]/30 p-6 rounded-sm border-l-2 border-[#112056]/10">{item.q}</p>}
                   <p className="text-slate-600 text-base leading-relaxed mt-auto pt-8 border-t border-slate-100">{item.d}</p>
@@ -133,28 +127,24 @@ const Expertise: React.FC = () => {
         </section>
       </div>
 
-      {/* MARQUEE SECTION - Smooth Transition Integration */}
-      <div className="bg-[#112056] py-12 overflow-hidden border-y-4 border-[#598BB3] relative z-20 shadow-2xl">
-        <div className="animate-scroll flex whitespace-nowrap">
-          {[...Array(6)].map((_, i) => (
-             <div key={i} className="flex items-center gap-12 mx-12">
-                <span className="text-white text-lg md:text-2xl font-serif italic tracking-wide">
-                  L’anticipation est la clé de la stratégie fiscale et une entrevue régulière, la clé de l’anticipation.
-                </span>
-                <Award className="text-[#598BB3] w-10 h-10" />
-             </div>
-          ))}
+      {/* --- SECTION APPEL À L'ACTION (Consistent with Home & Role) --- */}
+      <section className="py-16 lg:py-24 bg-[#112056] reveal relative overflow-hidden text-white group/cta">
+        <div className="absolute inset-0 opacity-10 transition-opacity duration-1000 group-hover/cta:opacity-25">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#598BB3] via-transparent to-transparent"></div>
         </div>
-      </div>
-
-      {/* CTA SECTION */}
-      <section className="py-24 md:py-32 bg-white text-center border-b border-slate-100">
-         <div className="max-w-2xl mx-auto px-6">
-            <h3 className="text-2xl md:text-4xl font-serif text-[#112056] mb-12">Besoin d'une analyse fiscale rigoureuse ?</h3>
-            <Link to="/contact" className="inline-block px-14 py-6 bg-[#112056] text-white font-bold uppercase tracking-widest text-xs hover:bg-[#598BB3] transition-all shadow-2xl hover:-translate-y-1 rounded-sm">
-                Prendre rendez-vous
+        
+        <div className="max-w-7xl mx-auto px-6 text-center space-y-12 lg:space-y-16 relative z-10">
+          <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold serif leading-tight tracking-tighter max-w-5xl mx-auto transition-transform duration-1000 group-hover/cta:scale-105 uppercase">
+            Besoin d’une analyse <br /><span className="text-[#598BB3]">fiscale rigoureuse ?</span>
+          </h2>
+          
+          <div className="flex flex-col justify-center items-center gap-12">
+            <Link to="/contact" className="group flex items-center gap-6 lg:gap-10 px-8 lg:px-12 py-4 lg:py-6 bg-white text-[#112056] font-bold uppercase tracking-[0.3em] text-sm lg:text-base hover:bg-[#598BB3] hover:text-white transition-all rounded-sm shadow-2xl active:scale-95">
+              Prendre rendez-vous
+              <ArrowRight className="w-5 h-5 transform group-hover:translate-x-4 transition-transform duration-700" />
             </Link>
-         </div>
+          </div>
+        </div>
       </section>
 
     </div>

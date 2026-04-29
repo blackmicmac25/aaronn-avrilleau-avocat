@@ -31,10 +31,10 @@ const WhyCall: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#F2E8D8] font-['Montserrat'] overflow-x-hidden min-h-screen pb-20">
+    <div className="bg-white font-['Montserrat'] overflow-x-hidden min-h-screen">
       
       {/* HEADER SECTION */}
-      <section className="pt-28 md:pt-40 pb-16 px-6 bg-white border-b border-slate-100">
+      <section className="pt-28 md:pt-40 pb-16 px-6 bg-[#F2E8D8] border-b border-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl reveal">
             <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-4 block underline underline-offset-8">QUAND FAIRE APPEL À UN AVOCAT</span>

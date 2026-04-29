@@ -22,9 +22,9 @@ const Fees: React.FC = () => {
       label: "Fiscalité",
       icon: <Icons.Fiscalite />,
       items: [
-        { name: "Premier rendez-vous", price: "200 € HT", note: "Si le rendez-vous conduit à la signature d’une lettre de mission, le montant du rendez-vous fera l’objet d’une remise lors de la première facture." },
+        { name: "Premier rendez-vous", price: "200 € HT", note: "Montant déduit de la mission en cas de signature d’une lettre de mission." },
         { name: "Consultation orale ne nécessitant pas d’analyse de pièces, de recherches ou de rédaction de consultation", price: "200 € / heure", note: "" },
-        { name: "Contrôle et contentieux fiscal", price: "160 € / heure + 8%", note: "Taux horaire de 160 € + honoraire de résultat de 8%" },
+        { name: "Contrôle et contentieux fiscal", price: "160 € / heure + 8% sur le résultat", note: "" },
         { name: "Consultation fiscale", price: "250 € / heure ou forfait", note: "Taux horaire de 250 € ou forfait lorsque cela est possible" },
         { name: "Consultation patrimoniale", price: "Sur devis", note: "" },
         { name: "Déclaration d’impôt sur le revenu simple", price: "À partir de 500 €", note: "" },
@@ -33,18 +33,18 @@ const Fees: React.FC = () => {
     },
     { 
       id: 'societes-baux',
-      cat: "OPÉRATIONS AFFÉRENTES AUX SOCIÉTÉS", 
-      label: "Sociétés",
+      cat: "SOCIÉTÉ ET COMMERCIALE", 
+      label: "Société",
       icon: <Icons.Societes />,
       items: [
-        { name: "Constitution SCI", price: "800 €", note: "" },
-        { name: "Constitution SAS / SARL opérationnelle en numéraire", price: "900 - 1.100 €", note: "" },
-        { name: "Constitution SAS / SARL part apport en nature", price: "1.000 € + 500 €", note: "+ 500 € par apport en nature" },
+        { name: "Constitution SCI", price: "900 €", note: "" },
+        { name: "Constitution SAS / SARL opérationnelle en numéraire", price: "1000 - 1200 €", note: "" },
+        { name: "Constitution SAS / SARL part apport en nature", price: "À partir de 1500 €", note: "" },
         { name: "Pacte d’associé", price: "1.500 € - 2.500 €", note: "" },
-        { name: "Approbation des comptes", price: "450 €", note: "" },
-        { name: "Modifications statutaires (hors capital)", price: "450 €", note: "" },
-        { name: "Augmentation de capital en numéraire", price: "750 €", note: "" },
-        { name: "Augmentation de capital en nature", price: "800 € + 400 €", note: "+ 400 € par apport en nature" },
+        { name: "Approbation des comptes", price: "À partir de", note: "" },
+        { name: "Modifications statutaires (hors capital)", price: "À partir de", note: "" },
+        { name: "Augmentation de capital en numéraire", price: "800 €", note: "" },
+        { name: "Augmentation de capital en nature", price: "900 € + 400 € par apport en nature", note: "" },
         { name: "Réduction du capital SCI", price: "800 €", note: "" },
         { name: "Réduction du capital SAS / SARL", price: "1.000 – 1.500 €", note: "" },
         { name: "Acte de cession de parts", price: "1.000 – 1.500 €", note: "" },
@@ -52,8 +52,8 @@ const Fees: React.FC = () => {
         { name: "Transformation régime sociétaire", price: "1.000 € - 1.500 €", note: "" },
         { name: "TUP intragroupe / fusion simplifiée", price: "1.750 €", note: "" },
         { name: "Fusion avec échange de titres", price: "2.500 €", note: "" },
-        { name: "Dissolution de société", price: "750 € - 1.000 €", note: "" },
-        { name: "Liquidation de société", price: "750 € - 1.000 €", note: "" },
+        { name: "Dissolution de société", price: "1000 €", note: "" },
+        { name: "Liquidation de société", price: "1000 €", note: "" },
         { name: "Suivi acquisition de sociétés tiers", price: "Selon devis", note: "" }
       ]
     },
@@ -63,13 +63,13 @@ const Fees: React.FC = () => {
       label: "Baux Commerciaux",
       icon: <Icons.Baux />,
       items: [
-        { name: "Bail commercial", price: "1.000 € - 3.000 €", note: "1 mois de loyer HT / 1.000 € minimum à 3.000 € maximum" },
+        { name: "Bail commercial", price: "1.000 € - 3.000 €", note: "1 mois de loyer (min 1 000 € / max 3 000 €)" },
         { name: "Promesse de bail commercial", price: "800 € min", note: "800 € minimum" },
         { name: "Avenant bail commercial", price: "À partir de 500 €", note: "" },
-        { name: "Bail précaire", price: "800 € min", note: "1 mois de loyer HT (800 € minimum)" },
-        { name: "Cession droit au bail", price: "1.500 € min", note: "1 à 3 % du prix de vente / 1.500 € minimum" },
+        { name: "Bail précaire", price: "1,5 à 3% du prix de vente / 1.500 € minimum", note: "" },
+        { name: "Cession droit au bail", price: "1.500 € min", note: "1 à 3 % du prix (minimum 1 500 €)" },
         { name: "Compromis cession droit au bail", price: "1.000 €", note: "" },
-        { name: "Cession fonds de commerce", price: "1.500 € min", note: "1 à 3 % du prix de vente / 1.500 € minimum" },
+        { name: "Cession fonds de commerce", price: "1,5 à 3% du prix de vente / 1.500 € minimum", note: "" },
         { name: "Compromis de vente de fonds de commerce", price: "1.000 €", note: "" },
         { name: "Location gérance", price: "1.500 € min", note: "1 mois de loyer (1.500 € minimum)" },
         { name: "Avenant location gérance", price: "800 €", note: "" },
@@ -80,32 +80,36 @@ const Fees: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#F2E8D8] pt-28 md:pt-36 pb-16 font-['Montserrat']">
-      <div className="max-w-7xl mx-auto px-6">
-        
-        {/* Header Section */}
-        <div className="max-w-4xl mx-auto text-center mb-16 md:mb-24 reveal">
-          <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-6 block underline underline-offset-8">HONORAIRES</span>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase mb-10">
-            Comprendre <span className="text-slate-400 font-light">les honoraires.</span>
-          </h1>
-          
-          <div className="text-slate-600 text-base md:text-lg leading-relaxed max-w-4xl mx-auto space-y-6 text-justify mb-12 border-l-4 border-[#598BB3] pl-8 pr-8 bg-white/50 py-8 rounded-r-sm shadow-sm">
-            <p>
-              Les honoraires des prestations et diligences effectuées par le Cabinet AVRILLEAU AVOCAT sont en principe déterminés, conformément aux usages de notre profession, par référence au temps passé, à la nature et à la complexité du dossier, à l’impact de notre intervention, ainsi qu’aux conditions et aux objectifs de l’assistance sollicitée.
-            </p>
-            <p>
-              La nature des prestations de l’avocat fait obstacle à une tarification universelle. Le cabinet pratique donc quatre modes de facturation.
-            </p>
-            <p>
-              Ils sont formalisés dans un devis ou une proposition d’assistance et sont facturées mensuellement au fur et à mesure de l’accomplissement de la mission.
-            </p>
+    <div className="bg-white font-['Montserrat'] min-h-screen">
+      <section className="bg-[#F2E8D8] pt-28 md:pt-36 pb-16">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Header Section */}
+          <div className="max-w-4xl mx-auto text-center mb-0 md:mb-0 reveal">
+            <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-6 block underline underline-offset-8">HONORAIRES</span>
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase mb-10">
+              Comprendre <span className="text-slate-400 font-light">les honoraires.</span>
+            </h1>
+            
+            <div className="text-slate-600 text-base md:text-lg leading-relaxed max-w-4xl mx-auto space-y-6 mb-0">
+              <p>
+                Les honoraires des prestations et diligences effectuées par le Cabinet AVRILLEAU AVOCAT sont en principe déterminés, conformément aux usages de notre profession, par référence au temps passé, à la nature et à la complexité du dossier, à l’impact de notre intervention, ainsi qu’aux conditions et aux objectifs de l’assistance sollicitée.
+              </p>
+              <p>
+                La nature des prestations de l’avocat fait obstacle à une tarification universelle. Le cabinet pratique donc quatre modes de facturation.
+              </p>
+              <p>
+                Ils sont formalisés dans un devis ou une proposition d’assistance et sont facturées mensuellement au fur et à mesure de l’accomplissement de la mission.
+              </p>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Section Modes de Facturation - PRO ALIGNMENT: Icons and titles aligned from the top */}
-        <div className="max-w-6xl mx-auto mb-20 md:mb-32 reveal">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Section Modes de Facturation - PRO ALIGNMENT: Icons and titles aligned from the top */}
+          <div className="max-w-6xl mx-auto mb-20 md:mb-32 reveal">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             
             {/* 1. L'HONORAIRE AU TEMPS PASSÉ */}
             <div className="group min-h-[500px] p-8 md:p-16 bg-white border border-slate-100 shadow-xl border-t-8 border-t-[#598BB3] hover:shadow-2xl transition-all duration-500 flex flex-col items-center">
@@ -195,7 +199,7 @@ const Fees: React.FC = () => {
                   : 'bg-transparent text-slate-400 border-slate-200 hover:border-[#598BB3] hover:text-[#598BB3]'
                 }`}
               >
-                SOCIÉTÉS & BAUX
+                SOCIETE ET COMMERCIALE
               </button>
             </div>
             
@@ -218,14 +222,23 @@ const Fees: React.FC = () => {
                   <div className="divide-y-2 divide-slate-50">
                       {section.items.map((item, i) => (
                           <div key={i} className="px-6 md:px-14 py-8 md:py-10 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-[#F2E8D8]/30 transition-all group gap-4">
-                              <div className="mb-0 max-w-2xl">
-                                  <p className="font-bold text-slate-900 text-base md:text-lg font-serif mb-2 group-hover:text-[#598BB3] leading-tight transition-colors">{item.name}</p>
-                                  {item.note && <p className="text-[11px] text-slate-500 uppercase tracking-widest font-bold italic opacity-80 mt-2">Note : {item.note}</p>}
+                              <div className="mb-0 max-w-2xl flex-grow">
+                                  <p className="font-bold text-slate-900 text-base md:text-lg font-serif mb-1 group-hover:text-[#598BB3] leading-tight transition-colors">{item.name}</p>
+                                  {item.note && item.name === "Premier rendez-vous" && (
+                                    <p className="text-[11px] md:text-xs text-slate-400 font-medium leading-relaxed mt-2 max-w-2xl">
+                                      {item.note}
+                                    </p>
+                                  )}
                               </div>
-                              <div className="flex items-center">
-                                <p className="text-[#598BB3] font-bold text-base md:text-xl font-serif tabular-nums tracking-tight whitespace-nowrap bg-slate-50 px-5 py-3 rounded-sm border border-slate-100 group-hover:border-[#598BB3]/40 transition-colors">
+                              <div className="flex-shrink-0 flex flex-col items-center gap-2">
+                                <div className="text-[#598BB3] font-bold text-base md:text-xl font-serif tabular-nums tracking-tight bg-slate-50 px-6 py-4 rounded-sm border border-slate-100 group-hover:border-[#598BB3]/40 transition-colors min-w-[140px] text-center shadow-sm">
                                   {item.price.replace(' HT', '')}
-                                </p>
+                                </div>
+                                {item.note && item.name !== "Premier rendez-vous" && (
+                                  <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold italic opacity-80 text-center max-w-[220px]">
+                                    {item.note}
+                                  </p>
+                                )}
                               </div>
                           </div>
                       ))}
@@ -246,8 +259,9 @@ const Fees: React.FC = () => {
               </div>
             ))}
           </div>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

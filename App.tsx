@@ -3,7 +3,6 @@ import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import WhyCall from './components/WhyCall';
-import PrivilegedLawyer from './components/PrivilegedLawyer';
 import News from './components/News';
 import Articles from './components/Articles';
 import ArticlePage from './components/ArticlePage';
@@ -13,6 +12,8 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import LegalNotice from './components/LegalNotice';
 import CookiePolicy from './components/CookiePolicy';
+import Accessibility from './components/Accessibility';
+import CookieBanner from './components/CookieBanner';
 import Role from './components/WhyCall/Role';
 import Expertise from './components/WhyCall/Expertise';
 import Methodology from './components/WhyCall/Methodology';
@@ -69,7 +70,6 @@ const AppContent: React.FC = () => {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/votre-avocat-privilegie" element={<PrivilegedLawyer />} />
             <Route path="/quand-solliciter" element={<WhyCall />} />
             <Route path="/quand-solliciter/role-avocat" element={<Role />} />
             <Route path="/quand-solliciter/domaine-intervention" element={<Expertise />} />
@@ -82,10 +82,12 @@ const AppContent: React.FC = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/mentions-legales" element={<LegalNotice />} />
             <Route path="/cookies" element={<CookiePolicy />} />
+            <Route path="/accessibilite" element={<Accessibility />} />
           </Routes>
         </main>
 
         <Footer />
+        <CookieBanner />
       </div>
   );
 };

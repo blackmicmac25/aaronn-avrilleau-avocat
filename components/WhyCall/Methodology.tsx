@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Handshake, ChevronLeft, Award, ChevronRight, Share2 } from 'lucide-react';
+import { Handshake, ChevronLeft, Award, ChevronRight, Share2, ArrowRight } from 'lucide-react';
 
 const Methodology: React.FC = () => {
   return (
-    <div className="bg-[#F2E8D8] font-['Montserrat'] overflow-x-hidden min-h-screen pb-16">
+    <div className="bg-white font-['Montserrat'] overflow-x-hidden min-h-screen">
       
       {/* HEADER SECTION */}
-      <section className="pt-28 md:pt-40 pb-20 px-6 bg-white border-b border-slate-100 relative overflow-hidden">
+      <section className="pt-28 md:pt-40 pb-20 px-6 bg-[#F2E8D8] border-b border-slate-100 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-4xl reveal">
             <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-6 block underline underline-offset-8">QUAND FAIRE APPEL À UN AVOCAT</span>
@@ -19,9 +19,7 @@ const Methodology: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 opacity-[0.03] pointer-events-none">
-          <Handshake className="w-[500px] h-[500px]" />
-        </div>
+
       </section>
 
       {/* CONTENT FLOW */}
@@ -60,11 +58,10 @@ const Methodology: React.FC = () => {
 
                   <ul className="space-y-10 serif text-lg md:text-xl text-slate-800 relative z-10">
                       {[
-                        "Une stratégie guidée en priorité par l’analyse fiscale",
                         "Un interlocuteur unique pour l’ensemble du dossier",
+                        "L’intervention de plusieurs praticiens exigeants lorsque cela est pertinent",
                         "Une coordination efficace entre les différents professionnels",
-                        "L’intervention ciblée de praticien lorsque cela est pertinent",
-                        "Une facturation centralisée, sans surcoût inutile"
+                        "Une tarification unique pour le client"
                       ].map((adv, idx) => (
                         <li key={idx} className="flex gap-6 items-start transform transition-transform duration-500 hover:translate-x-3 group/item">
                           <ChevronRight className="w-5 h-5 text-[#598BB3] mt-1.5 shrink-0 transition-transform group-hover/item:translate-x-1" />
@@ -78,27 +75,24 @@ const Methodology: React.FC = () => {
         </section>
       </div>
 
-      {/* MARQUEE SECTION */}
-      <div className="bg-[#112056] py-12 overflow-hidden border-y-4 border-[#598BB3] relative z-20 shadow-2xl">
-        <div className="animate-scroll flex whitespace-nowrap">
-          {[...Array(6)].map((_, i) => (
-             <div key={i} className="flex items-center gap-12 mx-12">
-                <span className="text-white text-lg md:text-2xl font-serif italic tracking-wide">
-                  L’anticipation est la clé de la stratégie fiscale et une entrevue régulière, la clé de l’anticipation.
-                </span>
-                <Award className="text-[#598BB3] w-10 h-10" />
-             </div>
-          ))}
+      {/* --- SECTION APPEL À L'ACTION (Consistent with Home) --- */}
+      <section className="py-16 lg:py-24 bg-[#112056] reveal relative overflow-hidden text-white group/cta">
+        <div className="absolute inset-0 opacity-10 transition-opacity duration-1000 group-hover/cta:opacity-25">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#598BB3] via-transparent to-transparent"></div>
         </div>
-      </div>
-
-      {/* CTA SECTION */}
-      <section className="py-24 md:py-32 bg-white text-center border-b border-slate-100">
-         <div className="max-w-2xl mx-auto px-6 text-center">
-            <Link to="/contact" className="inline-block px-14 py-6 bg-[#112056] text-white font-bold uppercase tracking-widest text-xs hover:bg-[#598BB3] transition-all shadow-2xl hover:-translate-y-1 rounded-sm">
-                Prendre rendez-vous
+        
+        <div className="max-w-7xl mx-auto px-6 text-center space-y-12 lg:space-y-16 relative z-10">
+          <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold serif leading-tight tracking-tighter max-w-5xl mx-auto transition-transform duration-1000 group-hover/cta:scale-105 uppercase">
+            Besoin d’une expertise transversale <br /><span className="text-[#598BB3]">pour votre situation ?</span>
+          </h2>
+          
+          <div className="flex flex-col justify-center items-center gap-12">
+            <Link to="/contact" className="group flex items-center gap-6 lg:gap-10 px-8 lg:px-12 py-4 lg:py-6 bg-white text-[#112056] font-bold uppercase tracking-[0.3em] text-sm lg:text-base hover:bg-[#598BB3] hover:text-white transition-all rounded-sm shadow-2xl active:scale-95">
+              Prendre rendez-vous
+              <ArrowRight className="w-5 h-5 transform group-hover:translate-x-4 transition-transform duration-700" />
             </Link>
-         </div>
+          </div>
+        </div>
       </section>
 
     </div>

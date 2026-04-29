@@ -54,9 +54,10 @@
         p {
             text-align: justify !important;
             text-justify: inter-word;
-            hyphens: auto;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
+            hyphens: auto !important;
+            -webkit-hyphens: auto !important;
+            word-break: break-word;
+            line-height: 1.8;
         }
 
         /* Ajustement Mobile */
@@ -69,7 +70,6 @@
         /* Force la police Serif sur les titres et classes spécifiques */
         h1, h2, h3, h4, h5, .serif, .font-serif {
             font-family: Cambria, Georgia, 'Times New Roman', serif !important;
-            font-weight: 700;
             line-height: 1.2;
             font-style: normal !important;
         }

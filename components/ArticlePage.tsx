@@ -152,10 +152,11 @@ const ArticlePage: React.FC = () => {
   const article = articlesData[slug];
 
   return (
-    <div className="bg-white min-h-screen pt-20 pb-20">
+    <div className="bg-white min-h-screen pb-20">
+      <div className="bg-[#F2E8D8] pt-20">
         {/* HERO IMAGE */}
         <div className="h-[50vh] md:h-[60vh] relative overflow-hidden">
-            <img 
+            <img loading="lazy" decoding="async" 
                 src={article.image} 
                 alt={article.title} 
                 className="w-full h-full object-cover attachment-fixed"
@@ -170,6 +171,7 @@ const ArticlePage: React.FC = () => {
                 </h1>
             </div>
         </div>
+      </div>
 
         {/* CONTENT */}
         <article className="max-w-4xl mx-auto px-6 py-12 md:py-16">
@@ -180,7 +182,7 @@ const ArticlePage: React.FC = () => {
             {/* AUTHOR BOX */}
             <div className="mt-20 p-8 md:p-12 bg-[#F2E8D8] border-l-4 border-[#112056] flex flex-col md:flex-row items-center gap-8">
                 <div className="shrink-0">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                         src="https://www.barreau-montpellier.com/upload/photo-annuaire/5059.png?1764686842" 
                         alt="Aaronn AVRILLEAU" 
                         className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
