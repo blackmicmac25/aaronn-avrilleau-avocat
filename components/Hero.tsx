@@ -47,18 +47,18 @@ const Hero: React.FC = () => {
 
           {/* BLOCK 1 (mobile order 1): Name, subtitle, badges */}
           <div className="lg:col-span-5 lg:row-start-1 order-1 space-y-4 text-left flex flex-col items-start pt-10 lg:pt-0">
-            <h1 className="reveal flex flex-col items-start leading-[1.1] mb-2">
+            <h1 className="flex flex-col items-start leading-[1.1] mb-2">
               <span className="brand-gradient serif text-2xl md:text-3xl lg:text-4xl font-bold mb-1">Maître Aaronn</span>
               <span className="brand-gradient text-3xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter">AVRILLEAU</span>
             </h1>
 
-            <div className="reveal space-y-4">
+            <div className="space-y-4">
               <p className="text-[#598BB3] text-sm md:text-base font-bold uppercase tracking-widest border-l-[4px] md:border-l-[6px] border-[#598BB3] pl-4">
                 Avocat en droit fiscal inscrit à la Cour d'appel de Montpellier
               </p>
             </div>
 
-            <div className="reveal flex flex-row flex-wrap gap-3 items-center">
+            <div className="flex flex-row flex-wrap gap-3 items-center">
               <span className="inline-block px-4 py-1.5 border-2 border-[#112056] text-[#112056] font-bold text-[9px] md:text-[10px] tracking-[0.2em] uppercase rounded-sm bg-white/50">
                 Cabinet domicilié à Montpellier
               </span>
@@ -83,9 +83,8 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* BLOCK 2 (mobile order 2): Slideshow — visible on all screen sizes */}
           <div className="lg:col-span-7 lg:row-start-1 order-2 flex justify-center lg:justify-end items-center">
-            <div className="relative reveal aspect-[4/5] w-full max-w-sm lg:max-w-lg group/diapo">
+            <div className="relative aspect-[4/5] w-full max-w-sm lg:max-w-lg group/diapo">
               <div className="w-full h-full bg-white overflow-hidden rounded-sm shadow-2xl border border-slate-200/50 group relative">
                 {slides.map((slide, index) => (
                   <div 
