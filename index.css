@@ -12,6 +12,7 @@ html, body {
     padding: 0;
     height: auto;
     min-height: 100%;
+    scroll-behavior: auto !important;
 }
 
 body {

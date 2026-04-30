@@ -27,28 +27,36 @@ const PageLoader = () => (
   </div>
 );
 
-const AppContent: React.FC = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const location = useLocation();
+const ProgressBar: React.FC = () => {
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Use requestAnimationFrame for smoother scroll progress updates
-      requestAnimationFrame(() => {
-        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
-        setScrollProgress(progress);
-      });
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const currentProgress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+      setProgress(currentProgress);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  return (
+    <div 
+      className="fixed top-0 left-0 h-1 bg-[#598BB3] z-[110] transition-all duration-100 ease-out" 
+      style={{ width: `${progress}%` }}
+    />
+  );
+};
+
+const AppContent: React.FC = () => {
+  const location = useLocation();
   const observerRef = React.useRef<IntersectionObserver | null>(null);
-  const mutationObserverRef = React.useRef<MutationObserver | null>(null);
 
   useEffect(() => {
+    // Scroll to top INSTANTLY on route change
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+
     if (!observerRef.current) {
       observerRef.current = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -57,45 +65,22 @@ const AppContent: React.FC = () => {
             observerRef.current?.unobserve(entry.target); 
           }
         });
-      }, { threshold: 0.05, rootMargin: '0px' });
+      }, { threshold: 0.05 });
     }
 
+    // Re-observe on pathname change (handles new page content)
     const observeElements = () => {
       document.querySelectorAll('.reveal').forEach(el => observerRef.current?.observe(el));
     };
 
-    observeElements();
-
-    if (!mutationObserverRef.current) {
-      mutationObserverRef.current = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-          mutation.addedNodes.forEach((node) => {
-            if (node instanceof HTMLElement) {
-              if (node.classList.contains('reveal')) {
-                observerRef.current?.observe(node);
-              }
-              node.querySelectorAll('.reveal').forEach(el => observerRef.current?.observe(el));
-            }
-          });
-        });
-      });
-      mutationObserverRef.current.observe(document.body, { childList: true, subtree: true });
-    }
-
-    return () => {
-      // We don't disconnect on every pathname change, only on unmount
-      // or we can just leave them running since it's a SPA
-    };
-  }, [location.pathname]); 
+    // Slight delay to ensure DOM is ready after Suspense/Lazy load
+    const timeoutId = setTimeout(observeElements, 100);
+    return () => clearTimeout(timeoutId);
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-[#F2E8D8] text-slate-900 selection:bg-[#598BB3] selection:text-white overflow-x-hidden flex flex-col">
-        <ScrollToTop />
-        <div 
-          className="fixed top-0 left-0 h-1 bg-[#598BB3] z-[110] transition-all duration-100 ease-out" 
-          style={{ width: `${scrollProgress}%` }}
-        />
-        
+        <ProgressBar />
         <Navbar />
         
         <main className="flex-grow">
