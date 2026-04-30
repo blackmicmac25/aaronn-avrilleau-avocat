@@ -68,15 +68,25 @@ const AppContent: React.FC = () => {
             observerRef.current?.unobserve(entry.target); 
           }
         });
-      }, { threshold: 0.05 });
+      }, { threshold: 0.01, rootMargin: '0px 0px 50px 0px' });
     }
 
-    const observeElements = () => {
-      document.querySelectorAll('.reveal').forEach(el => observerRef.current?.observe(el));
-    };
+    // Use double rAF to ensure DOM is fully laid out before observing
+    const rafId = requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.querySelectorAll('.reveal').forEach(el => {
+          // Elements already in the viewport get made visible immediately (no bounce)
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            el.classList.add('visible');
+          } else {
+            observerRef.current?.observe(el);
+          }
+        });
+      });
+    });
 
-    const timeoutId = setTimeout(observeElements, 500); 
-    return () => clearTimeout(timeoutId);
+    return () => cancelAnimationFrame(rafId);
   }, [location.pathname]);
 
   return (

@@ -30,7 +30,7 @@ const Expertise: React.FC = () => {
             {/* New side-by-side intro layout with image */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-center mb-20 md:mb-32">
                 {/* Image Column */}
-                <div className="lg:col-span-6 reveal">
+                <div className="lg:col-span-6">
                     <div className="relative group">
                         {/* Decorative background element - Now Centered */}
                         <div className="absolute -inset-4 border-2 border-[#B6834A] rounded-sm -z-10 transition-transform group-hover:scale-[1.02] duration-500"></div>
@@ -45,7 +45,7 @@ const Expertise: React.FC = () => {
                 </div>
 
                 {/* Text Column */}
-                <div className="lg:col-span-6 reveal">
+                <div className="lg:col-span-6">
 
                     <h2 className="text-3xl md:text-5xl font-bold serif text-[#112056] mb-10 uppercase leading-tight">
                         Expertise en <span className="text-slate-400">Droit Fiscal</span>
@@ -128,7 +128,7 @@ const Expertise: React.FC = () => {
       </div>
 
       {/* --- SECTION APPEL À L'ACTION (Consistent with Home & Role) --- */}
-      <section className="py-16 lg:py-24 bg-[#112056] reveal relative overflow-hidden text-white group/cta">
+      <section className="py-16 lg:py-24 bg-[#112056] relative overflow-hidden text-white group/cta">
         <div className="absolute inset-0 opacity-10 transition-opacity duration-1000 group-hover/cta:opacity-25">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#598BB3] via-transparent to-transparent"></div>
         </div>

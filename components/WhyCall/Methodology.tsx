@@ -76,7 +76,7 @@ const Methodology: React.FC = () => {
       </div>
 
       {/* --- SECTION APPEL À L'ACTION (Consistent with Home) --- */}
-      <section className="py-16 lg:py-24 bg-[#112056] reveal relative overflow-hidden text-white group/cta">
+      <section className="py-16 lg:py-24 bg-[#112056] relative overflow-hidden text-white group/cta">
         <div className="absolute inset-0 opacity-10 transition-opacity duration-1000 group-hover/cta:opacity-25">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#598BB3] via-transparent to-transparent"></div>
         </div>
