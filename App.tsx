@@ -1,31 +1,17 @@
-import React, { useEffect, useState, useLayoutEffect, Suspense, lazy } from 'react';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
 
-// Lazy load components for performance
-const Home = lazy(() => import('./components/Home'));
-const WhyCall = lazy(() => import('./components/WhyCall'));
-const News = lazy(() => import('./components/News'));
-const Articles = lazy(() => import('./components/Articles'));
-const ArticlePage = lazy(() => import('./components/ArticlePage'));
-const Contact = lazy(() => import('./components/Contact'));
-const Fees = lazy(() => import('./components/Fees'));
-const LegalNotice = lazy(() => import('./components/LegalNotice'));
-const CookiePolicy = lazy(() => import('./components/CookiePolicy'));
-const Accessibility = lazy(() => import('./components/Accessibility'));
-const Role = lazy(() => import('./components/WhyCall/Role'));
-const Expertise = lazy(() => import('./components/WhyCall/Expertise'));
-const Methodology = lazy(() => import('./components/WhyCall/Methodology'));
-const FollowUp = lazy(() => import('./components/WhyCall/FollowUp'));
-
+// Page Loader Component
 const PageLoader = () => (
   <div className="min-h-screen bg-[#F2E8D8] flex items-center justify-center">
     <div className="w-12 h-12 border-4 border-[#112056] border-t-transparent rounded-full animate-spin"></div>
   </div>
 );
 
+// Progress Bar Component (Isolated to prevent full app re-renders)
 const ProgressBar: React.FC = () => {
   const [progress, setProgress] = useState(0);
 
@@ -48,12 +34,28 @@ const ProgressBar: React.FC = () => {
   );
 };
 
+// Lazy load components
+const Home = lazy(() => import('./components/Home'));
+const WhyCall = lazy(() => import('./components/WhyCall'));
+const News = lazy(() => import('./components/News'));
+const Articles = lazy(() => import('./components/Articles'));
+const ArticlePage = lazy(() => import('./components/ArticlePage'));
+const Contact = lazy(() => import('./components/Contact'));
+const Fees = lazy(() => import('./components/Fees'));
+const LegalNotice = lazy(() => import('./components/LegalNotice'));
+const CookiePolicy = lazy(() => import('./components/CookiePolicy'));
+const Accessibility = lazy(() => import('./components/Accessibility'));
+const Role = lazy(() => import('./components/WhyCall/Role'));
+const Expertise = lazy(() => import('./components/WhyCall/Expertise'));
+const Methodology = lazy(() => import('./components/WhyCall/Methodology'));
+const FollowUp = lazy(() => import('./components/WhyCall/FollowUp'));
+
 const AppContent: React.FC = () => {
   const location = useLocation();
   const observerRef = React.useRef<IntersectionObserver | null>(null);
 
-  // Use useLayoutEffect for critical scroll action
-  useLayoutEffect(() => {
+  // Use useEffect for scroll - more stable across browsers
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   }, [location.pathname]);
 
@@ -69,13 +71,11 @@ const AppContent: React.FC = () => {
       }, { threshold: 0.05 });
     }
 
-    // Re-observe on pathname change (handles new page content)
     const observeElements = () => {
       document.querySelectorAll('.reveal').forEach(el => observerRef.current?.observe(el));
     };
 
-    // Slight delay to ensure DOM is ready after Suspense/Lazy load
-    const timeoutId = setTimeout(observeElements, 100);
+    const timeoutId = setTimeout(observeElements, 500); 
     return () => clearTimeout(timeoutId);
   }, [location.pathname]);
 
