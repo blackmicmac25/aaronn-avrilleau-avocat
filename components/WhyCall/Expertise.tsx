@@ -21,7 +21,7 @@ const Expertise: React.FC = () => {
       </section>
 
       {/* CONTENT FLOW */}
-      <div className="animate-in fade-in slide-in-from-bottom-6 duration-1000">
+      <div className="animate-in fade-in duration-1000">
         
         {/* Intro Section - Fluid Transition with Personal Image */}
         <section className="py-20 md:py-28 px-6">

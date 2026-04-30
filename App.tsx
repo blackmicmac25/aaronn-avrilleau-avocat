@@ -53,10 +53,12 @@ const AppContent: React.FC = () => {
   const location = useLocation();
   const observerRef = React.useRef<IntersectionObserver | null>(null);
 
-  useEffect(() => {
-    // Scroll to top INSTANTLY on route change
+  // Use useLayoutEffect for critical scroll action
+  useLayoutEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+  }, [location.pathname]);
 
+  useEffect(() => {
     if (!observerRef.current) {
       observerRef.current = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

@@ -23,7 +23,7 @@ const Methodology: React.FC = () => {
       </section>
 
       {/* CONTENT FLOW */}
-      <div className="animate-in fade-in slide-in-from-bottom-6 duration-1000">
+      <div className="animate-in fade-in duration-1000">
         
         {/* Continuous Narrative Section */}
         <section className="py-20 md:py-32 px-6">

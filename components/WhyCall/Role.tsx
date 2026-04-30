@@ -21,7 +21,7 @@ const Role: React.FC = () => {
       </section>
 
       {/* CONTINUOUS CONTENT FLOW */}
-      <div className="animate-in fade-in slide-in-from-bottom-6 duration-1000">
+      <div className="animate-in fade-in duration-1000">
         
         {/* Introduction Section - Unified Background */}
         <section className="py-20 md:py-28 px-6">
