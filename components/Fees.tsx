@@ -86,7 +86,7 @@ const Fees: React.FC = () => {
           {/* Header Section */}
           <div className="max-w-4xl mx-auto text-center mb-0 md:mb-0">
             <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-6 block underline underline-offset-8">HONORAIRES</span>
-            <h1 className="text-3xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase mb-10">
+            <h1 className="text-2xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase mb-10">
               Comprendre <span className="text-slate-400 font-light">les honoraires.</span>
             </h1>
             
@@ -176,7 +176,7 @@ const Fees: React.FC = () => {
         {/* --- GRILLE TARIFAIRE AVEC ONGLETS --- */}
         <div className="mb-24 md:mb-32 reveal" id="prices">
           <div className="text-center mb-16 md:mb-20">
-            <h3 className="text-3xl md:text-4xl font-bold serif text-slate-900 mb-6 uppercase tracking-tight">Grille tarifaire indicative</h3>
+            <h3 className="text-2xl md:text-4xl font-bold serif text-slate-900 mb-6 uppercase tracking-tight">Grille tarifaire indicative</h3>
             <div className="h-1 w-24 bg-[#B6834A] mx-auto mb-10"></div>
             
             {/* SÉLECTEUR D'ONGLETS PREMIUM */}

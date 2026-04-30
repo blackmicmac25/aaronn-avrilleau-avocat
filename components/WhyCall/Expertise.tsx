@@ -11,7 +11,7 @@ const Expertise: React.FC = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-4xl">
             <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-6 block underline underline-offset-8">QUAND FAIRE APPEL À UN AVOCAT</span>
-            <h1 className="text-3xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase mb-8">
+            <h1 className="text-2xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase mb-8">
               Domaines <span className="text-slate-400 font-light">d'intervention</span>
             </h1>
 
@@ -47,7 +47,7 @@ const Expertise: React.FC = () => {
                 {/* Text Column */}
                 <div className="lg:col-span-6">
 
-                    <h2 className="text-3xl md:text-5xl font-bold serif text-[#112056] mb-10 uppercase leading-tight">
+                    <h2 className="text-2xl md:text-5xl font-bold serif text-[#112056] mb-10 uppercase leading-tight">
                         Expertise en <span className="text-slate-400">Droit Fiscal</span>
                     </h2>
                     <div className="h-1.5 w-24 bg-[#B6834A] mb-10"></div>

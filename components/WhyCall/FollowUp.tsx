@@ -11,7 +11,7 @@ const FollowUp: React.FC = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-4xl">
             <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-6 block underline underline-offset-8">QUAND FAIRE APPEL À UN AVOCAT</span>
-            <h1 className="text-3xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase mb-8">
+            <h1 className="text-2xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase mb-8">
               Suivi <span className="text-slate-400 font-light">régulier ou ponctuel</span>
             </h1>
             <p className="text-lg text-slate-500 font-serif italic max-w-2xl border-l-2 border-[#598BB3] pl-6 py-2">

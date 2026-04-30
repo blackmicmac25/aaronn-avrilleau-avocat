@@ -38,7 +38,7 @@ const WhyCall: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl">
             <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-4 block underline underline-offset-8">QUAND FAIRE APPEL À UN AVOCAT</span>
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight text-slate-900 serif uppercase">
+            <h1 className="text-2xl md:text-5xl font-bold leading-tight text-slate-900 serif uppercase">
               Quand solliciter <span className="text-slate-400 font-light">le cabinet ?</span>
             </h1>
             <p className="mt-8 text-slate-600 text-lg md:text-xl font-serif italic max-w-2xl leading-relaxed">
