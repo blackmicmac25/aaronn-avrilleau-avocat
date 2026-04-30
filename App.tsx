@@ -45,42 +45,46 @@ const AppContent: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const observerRef = React.useRef<IntersectionObserver | null>(null);
+  const mutationObserverRef = React.useRef<MutationObserver | null>(null);
+
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target); 
-        }
-      });
-    }, { threshold: 0.05, rootMargin: '0px' });
-
-    const observeElements = () => {
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    };
-
-    // Initial observation
-    observeElements();
-
-    // Setup MutationObserver to watch for new lazy-loaded elements
-    const mutationObserver = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        mutation.addedNodes.forEach((node) => {
-          if (node instanceof HTMLElement) {
-            if (node.classList.contains('reveal')) {
-              observer.observe(node);
-            }
-            node.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    if (!observerRef.current) {
+      observerRef.current = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observerRef.current?.unobserve(entry.target); 
           }
         });
-      });
-    });
+      }, { threshold: 0.05, rootMargin: '0px' });
+    }
 
-    mutationObserver.observe(document.body, { childList: true, subtree: true });
+    const observeElements = () => {
+      document.querySelectorAll('.reveal').forEach(el => observerRef.current?.observe(el));
+    };
+
+    observeElements();
+
+    if (!mutationObserverRef.current) {
+      mutationObserverRef.current = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes.forEach((node) => {
+            if (node instanceof HTMLElement) {
+              if (node.classList.contains('reveal')) {
+                observerRef.current?.observe(node);
+              }
+              node.querySelectorAll('.reveal').forEach(el => observerRef.current?.observe(el));
+            }
+          });
+        });
+      });
+      mutationObserverRef.current.observe(document.body, { childList: true, subtree: true });
+    }
 
     return () => {
-      observer.disconnect();
-      mutationObserver.disconnect();
+      // We don't disconnect on every pathname change, only on unmount
+      // or we can just leave them running since it's a SPA
     };
   }, [location.pathname]); 
 

@@ -20,7 +20,7 @@ body {
     color: #1e293b;
     font-size: 17px;
     line-height: 1.6;
-    scroll-behavior: smooth;
+    scroll-behavior: auto !important;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     position: relative;
