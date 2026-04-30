@@ -9,9 +9,9 @@ const Role: React.FC = () => {
       {/* HEADER SECTION - Sophisticated & Clean */}
       <section className="pt-28 md:pt-40 pb-20 px-6 bg-[#F2E8D8] border-b border-slate-100 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-4xl reveal">
+          <div className="max-w-4xl">
             <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-6 block underline underline-offset-8">QUAND FAIRE APPEL À UN AVOCAT</span>
-            <h1 className="text-4xl md:text-6xl font-light leading-tight serif uppercase mb-8">
+            <h1 className="text-3xl md:text-6xl font-light leading-tight serif uppercase mb-8">
               <span className="font-bold text-slate-900">Le rôle</span> <span className="text-slate-400 font-light">de l’avocat en droit fiscal</span>
             </h1>
 

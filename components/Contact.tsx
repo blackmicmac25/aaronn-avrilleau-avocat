@@ -13,10 +13,10 @@ const Contact: React.FC = () => {
       <section className="bg-[#F2E8D8] pt-28 pb-12 md:pt-36 md:pb-16">
         <div className="max-w-7xl mx-auto px-6">
           {/* HEADER HARMONISÉ */}
-          <div className="flex flex-col md:flex-row justify-between items-end mb-0 gap-8 reveal">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-0 gap-8">
             <div className="max-w-3xl">
               <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-4 block underline underline-offset-8">CONTACT</span>
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase">
+              <h1 className="text-3xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase">
                 Prendre <span className="text-slate-400 font-light">Rendez-vous.</span>
               </h1>
             </div>

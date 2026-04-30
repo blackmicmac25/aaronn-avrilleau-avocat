@@ -84,9 +84,9 @@ const Fees: React.FC = () => {
       <section className="bg-[#F2E8D8] pt-28 md:pt-36 pb-16">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header Section */}
-          <div className="max-w-4xl mx-auto text-center mb-0 md:mb-0 reveal">
+          <div className="max-w-4xl mx-auto text-center mb-0 md:mb-0">
             <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-6 block underline underline-offset-8">HONORAIRES</span>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase mb-10">
+            <h1 className="text-3xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase mb-10">
               Comprendre <span className="text-slate-400 font-light">les honoraires.</span>
             </h1>
             

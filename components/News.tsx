@@ -33,9 +33,9 @@ const News: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6">
           {/* HEADER */}
           <div className="flex flex-col md:flex-row justify-between items-end mb-0 gap-8">
-          <div className="max-w-2xl reveal">
+          <div className="max-w-2xl">
             <span className="text-[#598BB3] uppercase tracking-widest text-xs font-bold mb-4 block underline underline-offset-8">PUBLICATIONS</span>
-            <h2 className="text-4xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase">
+            <h2 className="text-3xl md:text-6xl font-bold leading-tight text-slate-900 serif uppercase">
               Actualités <span className="text-slate-400 font-light">& Veille.</span>
             </h2>
           </div>

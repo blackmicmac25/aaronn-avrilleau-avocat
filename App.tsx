@@ -53,7 +53,7 @@ const AppContent: React.FC = () => {
           observer.unobserve(entry.target); 
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px' });
 
     const observeElements = () => {
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
