@@ -40,9 +40,7 @@ const Navbar: React.FC = () => {
 
   // Détection des pages où la barre doit être opaque par défaut
   const isArticlePage = location.pathname.startsWith('/article/');
-  const isNavbarOpaque = scrolled || isArticlePage;
-
-  const whyCallSubLinks = [
+  const isNavbarOpaque = scrolled || isArticlePage;  const whyCallSubLinks = [
     { name: 'Le rôle de l’avocat en droit fiscal', href: '/quand-solliciter/role-avocat' },
     { name: 'Domaine d’intervention', href: '/quand-solliciter/domaine-intervention' },
     { name: 'Approche pluridisciplinaire', href: '/quand-solliciter/approche-pluridisciplinaire' },

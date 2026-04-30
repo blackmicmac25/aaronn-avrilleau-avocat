@@ -114,12 +114,12 @@ const Expertise: React.FC = () => {
               ].map((item, i) => (
                 <div 
                   key={i} 
-                  className="group bg-white p-10 md:p-14 border-t-8 border-t-[#112056] shadow-xl hover:shadow-2xl transition-all duration-500 rounded-sm flex flex-col h-full hover:-translate-y-1"
+                  className="group bg-white p-10 md:p-14 border-t-8 border-t-[#112056] shadow-xl hover:shadow-2xl transition-all duration-500 rounded-sm flex flex-col min-h-[500px] hover:-translate-y-1"
                 >
                   <span className="text-[#598BB3] font-bold uppercase tracking-widest text-[10px] mb-8 block opacity-60">DOMAINE D'INTERVENTION</span>
-                  <h4 className="text-2xl font-bold serif text-slate-900 mb-8 group-hover:text-[#598BB3] transition-colors leading-tight">{item.t}</h4>
-                  {item.q && <p className="text-[#112056] font-serif italic text-base md:text-lg mb-8 bg-[#F2E8D8]/30 p-6 rounded-sm border-l-2 border-[#112056]/10">{item.q}</p>}
-                  <p className="text-slate-600 text-base leading-relaxed mt-auto pt-8 border-t border-slate-100">{item.d}</p>
+                  <h4 className="text-2xl font-bold serif text-slate-900 mb-8 group-hover:text-[#598BB3] transition-colors leading-tight md:min-h-[5rem] flex items-start">{item.t}</h4>
+                  {item.q && <p className="text-[#112056] font-serif italic text-base md:text-lg mb-8 bg-[#F2E8D8]/30 p-6 rounded-sm border-l-2 border-[#112056]/10 md:min-h-[12rem] flex items-start">{item.q}</p>}
+                  <p className="text-slate-600 text-base leading-relaxed pt-8 border-t border-slate-100">{item.d}</p>
                 </div>
               ))}
             </div>
