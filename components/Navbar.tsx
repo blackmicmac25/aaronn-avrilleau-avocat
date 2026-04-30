@@ -27,15 +27,12 @@ const Navbar: React.FC = () => {
   // Bloquer le scroll du body quand le menu est ouvert
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.touchAction = 'none'; // Prevent touch scroll on some mobile browsers
+      document.body.classList.add('no-scroll');
     } else {
-      document.body.style.overflow = 'unset';
-      document.body.style.touchAction = 'auto';
+      document.body.classList.remove('no-scroll');
     }
     return () => {
-      document.body.style.overflow = 'unset';
-      document.body.style.touchAction = 'auto';
+      document.body.classList.remove('no-scroll');
     };
   }, [isMenuOpen]);
 
@@ -113,7 +110,7 @@ const Navbar: React.FC = () => {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <button 
-                    className={`text-[8px] xl:text-[9.5px] uppercase tracking-wider transition-colors font-bold flex items-center gap-1 hover:text-black py-2 whitespace-nowrap ${isActive(link.href) || link.subLinks?.some(sl => isActive(sl.href)) ? 'text-[#598BB3]' : 'text-slate-900'}`}
+                    className={`text-[9px] xl:text-[11px] uppercase tracking-wider transition-colors font-bold flex items-center gap-1 hover:text-black py-2 whitespace-nowrap ${isActive(link.href) || link.subLinks?.some(sl => isActive(sl.href)) ? 'text-[#598BB3]' : 'text-slate-900'}`}
                   >
                     {link.name}
                     <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === link.id ? 'rotate-180' : ''}`} />
@@ -125,7 +122,7 @@ const Navbar: React.FC = () => {
                       <Link
                         key={sub.href}
                         to={sub.href}
-                        className={`block px-6 py-3 text-[9px] uppercase tracking-widest font-bold transition-all hover:bg-slate-50 hover:text-[#598BB3] ${isActive(sub.href) ? 'text-[#598BB3] bg-slate-50/50' : 'text-slate-600'}`}
+                        className={`block px-6 py-3 text-[10px] uppercase tracking-widest font-bold transition-all hover:bg-slate-50 hover:text-[#598BB3] ${isActive(sub.href) ? 'text-[#598BB3] bg-slate-50/50' : 'text-slate-600'}`}
                       >
                         {sub.name}
                       </Link>
@@ -137,8 +134,8 @@ const Navbar: React.FC = () => {
                   key={link.name}
                   to={link.href} 
                   className={link.isButton 
-                    ? "px-5 py-2 xl:px-6 xl:py-2.5 bg-[#112056] text-white hover:bg-[#598BB3] transition-all rounded-sm text-[8px] xl:text-[10px] uppercase tracking-widest font-bold shadow-xl active:scale-95 whitespace-nowrap ml-4"
-                    : `text-[8px] xl:text-[9.5px] uppercase tracking-wider transition-colors font-bold hover-underline whitespace-nowrap ${isActive(link.href) ? 'text-[#598BB3]' : 'text-slate-900 hover:text-black'}`
+                    ? "px-5 py-2 xl:px-6 xl:py-2.5 bg-[#112056] text-white hover:bg-[#598BB3] transition-all rounded-sm text-[9px] xl:text-[11px] uppercase tracking-widest font-bold shadow-xl active:scale-95 whitespace-nowrap ml-4"
+                    : `text-[9px] xl:text-[11px] uppercase tracking-wider transition-colors font-bold hover-underline whitespace-nowrap ${isActive(link.href) ? 'text-[#598BB3]' : 'text-slate-900 hover:text-black'}`
                   }
                 >
                   {link.name}
@@ -162,7 +159,7 @@ const Navbar: React.FC = () => {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-[#112056] z-[105] transition-all duration-700 cubic-bezier(0.7, 0, 0.3, 1) ${isMenuOpen ? 'translate-y-0 opacity-100 pointer-events-auto visibility-visible' : '-translate-y-full opacity-0 pointer-events-none visibility-hidden'} lg:hidden flex flex-col items-center justify-center`}>
+      <div className={`fixed inset-0 bg-[#112056] z-[105] transition-all duration-700 cubic-bezier(0.7, 0, 0.3, 1) ${isMenuOpen ? 'translate-y-0 opacity-100 pointer-events-auto visible' : '-translate-y-full opacity-0 pointer-events-none invisible'} lg:hidden flex flex-col items-center justify-center`}>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
              <div className="absolute top-0 right-0 w-[50vh] h-[50vh] bg-[#598BB3] rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-blob"></div>
              <div className="absolute bottom-0 left-0 w-[50vh] h-[50vh] bg-[#598BB3] rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-blob animation-delay-2000"></div>
@@ -175,7 +172,7 @@ const Navbar: React.FC = () => {
                 <>
                   <button 
                     onClick={() => setActiveMobileSubmenu(activeMobileSubmenu === link.id ? null : (link.id || null))}
-                    className={`text-sm md:text-xl font-bold uppercase tracking-[0.2em] transition-all duration-500 flex items-center gap-2 transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive(link.href) || link.subLinks?.some(sl => isActive(sl.href)) ? 'text-[#598BB3]' : 'text-white'}`}
+                    className={`text-lg md:text-2xl font-bold uppercase tracking-[0.2em] transition-all duration-500 flex items-center gap-2 transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive(link.href) || link.subLinks?.some(sl => isActive(sl.href)) ? 'text-[#598BB3]' : 'text-white'}`}
                     style={{ transitionDelay: `${100 + idx * 50}ms` }}
                   >
                     {link.name}
@@ -199,7 +196,7 @@ const Navbar: React.FC = () => {
               ) : (
                 <Link 
                   to={link.href}
-                  className={`text-sm md:text-xl font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:text-[#598BB3] transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${link.isButton ? 'bg-white text-[#112056] hover:bg-[#598BB3] hover:text-white px-8 py-4 rounded-sm mt-8 shadow-xl' : (isActive(link.href) ? 'text-[#598BB3]' : 'text-white')}`}
+                  className={`text-lg md:text-2xl font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:text-[#598BB3] transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${link.isButton ? 'bg-white text-[#112056] hover:bg-[#598BB3] hover:text-white px-8 py-4 rounded-sm mt-8 shadow-xl' : (isActive(link.href) ? 'text-[#598BB3]' : 'text-white')}`}
                   style={{ transitionDelay: `${100 + idx * 50}ms` }}
                   onClick={() => setIsMenuOpen(false)}
                 >

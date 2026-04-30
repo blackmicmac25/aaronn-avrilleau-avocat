@@ -7,15 +7,28 @@
     --brand-light-blue: #f4f8fb;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    min-height: 100%;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--brand-beige); 
     color: #1e293b;
-    font-size: 20px;
-    line-height: 1.8;
+    font-size: 18px;
+    line-height: 1.6;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    position: relative;
+}
+
+.no-scroll {
+    overflow: hidden !important;
+    touch-action: none;
 }
 
 p {

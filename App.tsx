@@ -53,16 +53,35 @@ const AppContent: React.FC = () => {
           observer.unobserve(entry.target); 
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
     const observeElements = () => {
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     };
 
+    // Initial observation
     observeElements();
-    // Removed the 500ms delay to improve perceived performance
 
-    return () => observer.disconnect();
+    // Setup MutationObserver to watch for new lazy-loaded elements
+    const mutationObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node instanceof HTMLElement) {
+            if (node.classList.contains('reveal')) {
+              observer.observe(node);
+            }
+            node.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+          }
+        });
+      });
+    });
+
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, [location.pathname]); 
 
   return (
