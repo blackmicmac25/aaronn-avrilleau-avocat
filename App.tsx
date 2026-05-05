@@ -60,6 +60,7 @@ const AppContent: React.FC = () => {
   }, [location.pathname]);
 
   useEffect(() => {
+    // Create the observer if it doesn't exist
     if (!observerRef.current) {
       observerRef.current = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -71,22 +72,44 @@ const AppContent: React.FC = () => {
       }, { threshold: 0.01, rootMargin: '0px 0px 50px 0px' });
     }
 
-    // Use double rAF to ensure DOM is fully laid out before observing
+    const refreshReveal = () => {
+      document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        // If element is already in viewport or above it, show immediately
+        if (rect.top < window.innerHeight) {
+          el.classList.add('visible');
+        } else {
+          observerRef.current?.observe(el);
+        }
+      });
+    };
+
+    // Use double rAF as initial check to ensure initial layout is ready
     const rafId = requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        document.querySelectorAll('.reveal').forEach(el => {
-          // Elements already in the viewport get made visible immediately (no bounce)
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight) {
-            el.classList.add('visible');
-          } else {
-            observerRef.current?.observe(el);
-          }
-        });
+        refreshReveal();
       });
     });
 
-    return () => cancelAnimationFrame(rafId);
+    // Watch for DOM changes to handle lazy-loaded content or dynamic sections
+    const mutationObserver = new MutationObserver(() => {
+      refreshReveal();
+    });
+
+    mutationObserver.observe(document.body, { 
+      childList: true, 
+      subtree: true,
+      attributes: false
+    });
+
+    // Safety fallback: run once more after 500ms
+    const timeoutId = setTimeout(refreshReveal, 500);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      mutationObserver.disconnect();
+      clearTimeout(timeoutId);
+    };
   }, [location.pathname]);
 
   return (
