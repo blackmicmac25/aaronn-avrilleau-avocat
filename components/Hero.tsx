@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
                 <p>Après plusieurs expériences professionnelles, notamment au sein des cabinets Fidal et Deloitte, ainsi qu'à la chambre fiscale du tribunal administratif de Montpellier, il a choisi de mettre cette expertise au service de sa clientèle personnelle à partir de 2026.</p>
                 <p>Il accompagne principalement les dirigeants de TPE et de PME dans leurs problématiques juridiques et fiscales en intervenant principalement sur Montpellier et Perpignan.</p>
               </div>
-              <div className="reveal flex flex-col sm:flex-row gap-4 md:gap-6 pt-2 w-full justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-2 w-full justify-start">
                 <Link to="/contact" className="px-8 py-4 md:px-10 md:py-5 bg-[#112056] text-white font-bold rounded-sm hover:bg-[#598BB3] transition-all text-center uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] shadow-xl active:scale-95">
                   Prendre rendez-vous
                 </Link>
@@ -144,7 +144,7 @@ const Hero: React.FC = () => {
         </div>{/* end grid */}
 
         {/* Academic Titles Table */}
-        <div className="mt-20 md:mt-32 reveal">
+        <div className="mt-20 md:mt-32">
           <div className="bg-white p-8 md:p-12 border border-slate-200/50 shadow-xl rounded-sm group hover:shadow-2xl transition-all duration-700">
             <h4 className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold text-[#598BB3] mb-8 md:mb-10 border-b-2 border-[#598BB3]/10 pb-6 group-hover:border-[#598BB3]/30 transition-colors">
               Diplômes &amp; Certifications

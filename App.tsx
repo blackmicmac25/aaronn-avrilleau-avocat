@@ -60,7 +60,6 @@ const AppContent: React.FC = () => {
   }, [location.pathname]);
 
   useEffect(() => {
-    // Create the observer if it doesn't exist
     if (!observerRef.current) {
       observerRef.current = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -75,7 +74,6 @@ const AppContent: React.FC = () => {
     const refreshReveal = () => {
       document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
         const rect = el.getBoundingClientRect();
-        // If element is already in viewport or above it, show immediately
         if (rect.top < window.innerHeight) {
           el.classList.add('visible');
         } else {
@@ -84,31 +82,12 @@ const AppContent: React.FC = () => {
       });
     };
 
-    // Use double rAF as initial check to ensure initial layout is ready
-    const rafId = requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        refreshReveal();
-      });
-    });
-
-    // Watch for DOM changes to handle lazy-loaded content or dynamic sections
-    const mutationObserver = new MutationObserver(() => {
-      refreshReveal();
-    });
-
-    mutationObserver.observe(document.body, { 
-      childList: true, 
-      subtree: true,
-      attributes: false
-    });
-
-    // Safety fallback: run once more after 500ms
-    const timeoutId = setTimeout(refreshReveal, 500);
+    const timeoutId = setTimeout(refreshReveal, 100);
+    const timeoutId2 = setTimeout(refreshReveal, 1000);
 
     return () => {
-      cancelAnimationFrame(rafId);
-      mutationObserver.disconnect();
       clearTimeout(timeoutId);
+      clearTimeout(timeoutId2);
     };
   }, [location.pathname]);
 

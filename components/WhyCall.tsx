@@ -56,7 +56,7 @@ const WhyCall: React.FC = () => {
               <Link 
                 key={idx}
                 to={rubric.path}
-                className="group relative bg-white p-10 md:p-14 border border-slate-100 shadow-xl hover:shadow-2xl transition-all duration-500 rounded-sm overflow-hidden flex flex-col items-start min-h-[320px] reveal"
+                className="group relative bg-white p-10 md:p-14 border border-slate-100 shadow-xl hover:shadow-2xl transition-all duration-500 rounded-sm overflow-hidden flex flex-col items-start min-h-[320px]"
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
                 {/* Background Decoration */}
