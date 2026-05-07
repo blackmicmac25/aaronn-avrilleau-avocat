@@ -16,7 +16,7 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-2xl border border-slate-100 bg-white">
                 <img loading="lazy" decoding="async" 
-                  src="/aaronn-avrilleau.jpg" 
+                  src="/aaronn-avrilleau.png" 
                   alt="Maître Aaronn AVRILLEAU" 
                   className="w-full h-full object-cover grayscale"
                 />

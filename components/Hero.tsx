@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
 
   const slides = [
     {
-      image: "/aaronn-avrilleau.jpg",
+      image: "/aaronn-avrilleau.png",
       title: "Maître Aaronn AVRILLEAU",
       subtitle: "Avocat au Barreau",
       boxTitle: "AVOCAT EN \n DROIT FISCAL",
