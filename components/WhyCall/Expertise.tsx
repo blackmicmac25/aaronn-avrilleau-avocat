@@ -36,7 +36,7 @@ const Expertise: React.FC = () => {
                         <div className="absolute -inset-4 border-2 border-[#B6834A] rounded-sm -z-10 transition-transform group-hover:scale-[1.02] duration-500"></div>
                         <div className="shadow-[0_20px_50px_rgba(0,0,0,0.2)] rounded-sm overflow-hidden">
                             <img loading="lazy" decoding="async" 
-                                src="/aaronn-avrilleau.png" 
+                                src="/aaronn-avrilleau-expertise.png" 
                                 alt="Maître AVRILLEAU" 
                                 className="w-full h-auto transition-all duration-700 hover:scale-[1.03]"
                             />

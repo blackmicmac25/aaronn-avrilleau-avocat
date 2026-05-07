@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
             
             {/* Photo above form */}
             <div className="w-full h-48 md:h-64 mb-8 overflow-hidden rounded-sm relative z-10 shadow-sm border border-slate-100 bg-[#F2E8D8] flex items-center justify-center">
-               <img loading="lazy" decoding="async" src="/aaronn-avrilleau.png" alt="Avocat" className="w-full h-auto object-cover" />
+               <img loading="lazy" decoding="async" src="/aaronn-avrilleau-contact.png" alt="Avocat" className="w-full h-auto object-cover" />
             </div>
             <form className="space-y-6 md:space-y-8 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">

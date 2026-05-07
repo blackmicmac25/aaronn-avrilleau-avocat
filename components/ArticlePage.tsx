@@ -183,7 +183,7 @@ const ArticlePage: React.FC = () => {
             <div className="mt-20 p-8 md:p-12 bg-[#F2E8D8] border-l-4 border-[#112056] flex flex-col md:flex-row items-center gap-8">
                 <div className="shrink-0">
                     <img loading="lazy" decoding="async" 
-                        src="/aaronn-avrilleau.png" 
+                        src="/aaronn-avrilleau-author.png" 
                         alt="Aaronn AVRILLEAU" 
                         className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
                     />
